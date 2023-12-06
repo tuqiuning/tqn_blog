@@ -61,7 +61,6 @@ const SEX = {
     "zh-CN": '性别',
     "en-US": 'sex'
 }
-
 const MALE = {
     "zh-CN": '男',
     "en-US": 'male'
@@ -76,11 +75,11 @@ const PROJECT = {
 }
 const PHONE = {
     "zh-CN": '手机号',
-    "en-US": 'phone'
+    "en-US": 'Phone'
 }
 const WECHAT = {
     "zh-CN": '微信号',
-    "en-US": 'wechat'
+    "en-US": 'WeChat'
 }
 const EMAIL = {
     "zh-CN": '电子邮件',

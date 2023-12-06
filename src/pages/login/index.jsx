@@ -3,10 +3,8 @@ import { Button, Checkbox, Form, Input } from "antd";
 import { useNavigate  } from "react-router-dom";
 import { LoginStyled } from "./LoginStyled";
 import axios from "../../utils/request";
-import img1 from "@/assets/img/loginBG.png";
 export default function Login() {
   let [img, setImg] = useState("");
-  let bb = aaa()
   let navigate = useNavigate()
   useEffect(() => {
     setImg(
@@ -44,17 +42,10 @@ const onFinishFailed = (errorInfo) => {
 
   return (
     <LoginStyled>
-      <div>
-        <img
-          src={img1}
-          alt=""
-          width={"100%"}
-          height={"60%"}
-        />
         <div className="loginBox">
-          <h1>WELCOME</h1>
+          <h1 className="welcome">WELCOME</h1>
           <div>
-            <h3>tuqiuning's blog</h3>
+            <h3 className="title">tuqiuning's blog</h3>
             <Form
               name="basic"
               layout="vertical"
@@ -107,39 +98,6 @@ const onFinishFailed = (errorInfo) => {
               >
                 <Input.Password />
               </Form.Item>
-              <Form.Item
-                label="验证码"
-                name="kaptchaCode"
-                rules={[
-                  {
-                    required: true,
-                    message: "请输入验证码",
-                  },
-                ]}
-                labelCol={{
-                  span: 24,
-                }}
-                wrapperCol={{
-                  span: 18,
-                }}
-                style={{ marginLeft: 70 }}
-              >
-                <div className="kaptcha" onClick={changeKaptcha}>
-                  <Input />
-                  <img src={img} alt="验证码" width={80} />
-                </div>
-              </Form.Item>
-
-              <Form.Item
-                name="remember"
-                valuePropName="checked"
-                style={{ marginLeft: 70 }}
-              >
-                <div style={{ display: "flex" }}>
-                  {" "}
-                  <Checkbox>记住密码</Checkbox>
-                </div>
-              </Form.Item>
 
               <Form.Item>
                 <Button type="primary" htmlType="submit">
@@ -149,7 +107,6 @@ const onFinishFailed = (errorInfo) => {
             </Form>
           </div>
         </div>
-      </div>
     </LoginStyled>
   );
 }
