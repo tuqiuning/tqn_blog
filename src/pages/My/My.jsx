@@ -4,9 +4,9 @@ import { MyContainer } from './style';
 
 const My = memo(() => {
   useEffect(()=>{
-      aaa()
+      draw()
   },[])
-  function aaa() {
+  function draw() {
     Particles.init({
         // 选择canvas画布元素
         selector: '.background',
