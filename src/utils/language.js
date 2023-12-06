@@ -86,6 +86,10 @@ const EMAIL = {
     "zh-CN": '电子邮件',
     "en-US": 'Email'
 }
+const GITHUB = {
+    "zh-CN": 'GitHub',
+    "en-US": 'GitHub'
+}
 const COPY = {
     "zh-CN": '复制',
     "en-US": 'copy'
@@ -93,6 +97,10 @@ const COPY = {
 const SAVE = {
     "zh-CN": '保存二维码',
     "en-US": 'Save QR code'
+}
+const OPENLINK = {
+    "zh-CN": '打开链接',
+    "en-US": 'Open the link'
 }
 export default {
     TUQIUNING,
@@ -112,5 +120,7 @@ export default {
     WECHAT,
     EMAIL,
     COPY,
-    SAVE
+    SAVE,
+    GITHUB,
+    OPENLINK
 }

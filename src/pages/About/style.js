@@ -19,5 +19,7 @@ export const AboutWrapper = styled.div`
         width:100%;
         display:flex;
         justify-content:flex-end;
+        gap:20px;
+        margin-top:10px;
     }
 `

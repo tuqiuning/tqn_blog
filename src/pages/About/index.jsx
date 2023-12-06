@@ -13,13 +13,16 @@ export default memo(() => {
   const info = useRef({
     phone:'13101085395',
     wechat:'tu_qiu_ning',
-    Email:'tuqiuning@gmail.com'
+    Email:'tuqiuning@gmail.com',
+    GitHub:'https://github.com/tuqiuning'
   })
-  const [type,setType] = useState('phone');
+  const [type,setType] = useState('PHONE'); //当前弹窗打开的类型
+  const [modalTitle,setModalTitle] = useState(''); //弹窗标题
   const [modalContent,setModalContent] = useState('13101085395'); //弹窗显示的内容
   const [messageApi,contextHolder] = message.useMessage(); //提示语
   const showModal = (type) => {
-    setType(languageCode[type][language]);
+    setType(type);
+    setModalTitle(languageCode[type][language]);
     setModalContent(info.current[languageCode[type]['en-US']])
     setIsModalOpen(true);
   }
@@ -38,6 +41,11 @@ export default memo(() => {
       })
     })
   }
+  const handle = () =>{
+    if(type === 'GITHUB'){
+      window.open(modalContent)
+    }
+  }
   return (
     <AboutWrapper>
       <div className='aboutItem' onClick={()=>showModal('PHONE')} >
@@ -49,17 +57,26 @@ export default memo(() => {
       <div className='aboutItem' onClick={()=>showModal('EMAIL')} >
         {languageCode.EMAIL[language]}
       </div>
-      <Modal title={type} footer={null} open={isModalOpen} onCancel={handleCancel} width={400}>
+      <div className='aboutItem' onClick={()=>showModal('GITHUB')} >
+        {languageCode.GITHUB[language]}
+      </div>
+      <Modal title={modalTitle} footer={null} open={isModalOpen} onCancel={handleCancel} width={400}>
         <p>{modalContent}</p>
-        <Image
-        style={{marginLeft:'-24px'}}
-        width={200}
-        src={qrcode}
-        />
-        <div className='copyBtn' style={{width:'100%',display:'flex',justifyContent:'flex-end',gap:'20px'}}>
-        <Button type="primary" onClick={copyPhone}>
-          {languageCode.SAVE[language]}
-        </Button>
+        {
+          type === 'WECHAT' && <Image
+          style={{marginLeft:'-24px'}}
+          width={200}
+          src={qrcode}
+          />
+        }
+        <div className='copyBtn' style={{width:'100%',display:'flex',justifyContent:'flex-end',gap:'20px',marginTop:'10px'}}>
+          {
+            ['WECHAT','GITHUB'].includes(type) && 
+              <Button type="primary" onClick={()=>handle()}>
+              {type === 'GITHUB'? languageCode.OPENLINK[language]:languageCode.SAVE[language]}
+            </Button>
+          }
+        
         <Button type="primary" onClick={copyPhone}>
           {languageCode.COPY[language]}
         </Button>

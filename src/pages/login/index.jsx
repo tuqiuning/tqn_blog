@@ -4,7 +4,6 @@ import { useNavigate  } from "react-router-dom";
 import { LoginStyled } from "./LoginStyled";
 import axios from "../../utils/request";
 import img1 from "@/assets/img/loginBG.png";
-import aaa from './aaa.jsx'
 export default function Login() {
   let [img, setImg] = useState("");
   let bb = aaa()
@@ -53,9 +52,9 @@ const onFinishFailed = (errorInfo) => {
           height={"60%"}
         />
         <div className="loginBox">
-          <h1>欢迎登录</h1>
+          <h1>WELCOME</h1>
           <div>
-            <h3>基坑降排水智能监测控制系统</h3>
+            <h3>tuqiuning's blog</h3>
             <Form
               name="basic"
               layout="vertical"
