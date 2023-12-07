@@ -3,43 +3,63 @@ export const Container =  styled.div`
     color:#fff;
     position: relative;
     display:flex;
-    .searchBox {
-        margin-top:-2px;
-        width:100px;
-        height:24px;
-        border-radius:24px;
-        border:1px solid #fff;
-        background-color:#000;
-
-        margin-right:10px;
-        display:flex;
-        align-items:center;
-        padding:0 5px;
+    .rotateContainer {
+        height:30px;
         overflow:hidden;
-        input {
-            color:#fff;
-            border:none;
-            outline:none;
-            height:22px;
-            width:80%;
-            background-color:#000
+        .rotateBox {
+            display:flex;
+            flex-direction:column;
+            align-items:center;
         }
-    }
-    .tabs {
-        list-style:none;
-        display:flex;
-        gap:10px;
-        margin-bottom:0;
-        white-space:nowrap;
-        li {
-            cursor:pointer;
-            &:nth-child(-n+5) {
-                &:hover {
-                    color:#118add
+        .tabs {
+            height:30px;
+            list-style:none;
+            display:flex;
+            
+            align-items:center;
+            gap:10px;
+            margin-bottom:0;
+            white-space:nowrap;
+            li {
+                cursor:pointer;
+                &:nth-child(-n+5) {
+                    &:hover {
+                        color:#118add
+                    }
                 }
             }
         }
+        .searchBox {
+            width:200px;
+            height:30px;
+            box-sizing:border-box;
+            border-radius:24px;
+            border:1px solid #fff;
+            background-color:#000;
+    
+            margin-right:10px;
+            display:flex;
+            align-items:center;
+            padding:0 5px;
+            overflow:hidden;
+            input {
+                color:#fff;
+                border:none;
+                outline:none;
+                margin-left:5px;
+                height:22px;
+                width:90%;
+                background-color:#000
+            }
+        }
     }
+    .searchIcon {
+        height:30px;
+        display:flex;
+        margin-left:10px;
+        align-items:center;
+    }
+    
     .icon {
         height:20px;
     }
@@ -70,9 +90,9 @@ export const Container =  styled.div`
             position:absolute;
             z-index:9;
             width:100%;
-            top:200px;
+            top:135px;
             left:0;
-            height:calc(100vh - 261px);
+            height:calc(100vh - 196px);
             background-color:rgba(0,0,0,.3)
         }
     }
