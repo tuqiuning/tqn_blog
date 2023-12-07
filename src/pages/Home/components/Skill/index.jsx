@@ -2,7 +2,6 @@ import React, { memo } from 'react'
 
 export default memo(() => {
   return (
-    <div>
       <ul>
         <li>熟练使用HTML5、CSS3、CSS预处理器进行快速布局和样式调整</li>
         <li>熟练掌握JavaScript数组及对象常见API，原型，原型链，this指向，闭包，作用域等</li>
@@ -16,6 +15,5 @@ export default memo(() => {
         <li>熟练使用Vue3、Pinia状态管理工具，掌握TypeScript 规范，熟练使用接口泛型</li>
         <li>熟练使用Node.js、Express和MongoDB进行环境搭载及连接数据库，具备后端开发能力</li>
       </ul>
-    </div>
   )
 })

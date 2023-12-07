@@ -15,7 +15,7 @@ export default memo(() => {
   })
   const navigate = useNavigate();
   const goHome = () => {
-    navigate('/home/skill');
+    navigate('/home');
     setActiveNavIndex(0);
   }
   // 点击导航栏

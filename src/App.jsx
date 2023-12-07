@@ -7,8 +7,6 @@ import Index from "./pages/Index/index.jsx";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Web from './pages/Web';
-import Skill from './pages/Home/components/Skill';
-import Project from './pages/Home/components/Project';
 import "./App.css";
 import { connect } from "react-redux";
 
@@ -18,10 +16,7 @@ function App(props) {
       <Routes>
         <Route path="/login" Component={Login}></Route>
         <Route path="/" element={<Index />}>
-          <Route path="home" element={<Home />}>
-            <Route path="skill" element={<Skill />}></Route>
-            <Route path="project" element={<Project />}></Route>
-          </Route>
+          <Route path="home" element={<Home />}></Route>
           <Route path="about" element={<About />}></Route>
           <Route path="web" element={<Web />}></Route>
           

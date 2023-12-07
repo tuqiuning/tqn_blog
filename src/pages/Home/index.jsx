@@ -1,8 +1,9 @@
-import React, { memo,useEffect,useState } from 'react';
-import { Outlet, useNavigate } from 'react-router-dom';
+import React, { memo,useState } from 'react';
 import { useSelector } from 'react-redux';
 import classNames from 'classnames';
 import languageCode from '@/utils/language';
+import Skill from './components/Skill';
+import Project from './components/Project'
 
 import {HomeContainer} from './style'
 
@@ -11,17 +12,14 @@ export default memo(() => {
     return state.counter
   })
   const [current, setCurrent] = useState(0);
-  const navigate = useNavigate();
-  useEffect(()=>{
-    navigate('/home/skill')
-  },[])
+  const [showSkill,setShowSkill] = useState(true)
   const toSkill = () => {
-    navigate('/home/skill');
     setCurrent(0);
+    setShowSkill(true)
   }
   const toProject = () => {
-    navigate('/home/project');
     setCurrent(1);
+    setShowSkill(false)
   }
   return (
     <HomeContainer>
@@ -38,7 +36,9 @@ export default memo(() => {
         <span onClick={toProject} className={classNames({ active: current === 1 })}>{languageCode.PROJECT[language]}</span>
       </div>
       <div className='content'>
-        <Outlet></Outlet>
+        {
+          showSkill ? <Skill /> : <Project />
+        }
       </div>
     </HomeContainer>
   )
