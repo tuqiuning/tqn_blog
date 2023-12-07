@@ -7,7 +7,7 @@ import languageCode from '@/utils/language';
 import store from '@/store';
 import { changeLanguage } from '@/store/features/counter';
  
-export default memo((props) => {
+export default memo(({activeNavIndex,clickNav}) => {
     const {language} = useSelector((state)=>{
         return state.counter
     })
@@ -17,13 +17,12 @@ export default memo((props) => {
     const tabs = [
         languageCode.HOME,
         languageCode.FORME,
-        languageCode.WORK,
+        // languageCode.WORK,
         languageCode.FRONT,
-        languageCode.END,
+        // languageCode.END,
         languageCode.LANG,
     ]
     const [excessPhone, setExcessPhone] = useState(innerWidth >= 750); //是否大于750
-    const [currentIndex,setCurrentIndex] = useState(0); //tabs下标
     const [isOpen, setIsOpen] = useState(false); //是否打开菜单弹窗
     const [searchValue,setSearchValue] = useState(''); //搜索
     const navigate = useNavigate();
@@ -48,12 +47,12 @@ export default memo((props) => {
     // 切换tab
     const changeTab = (path,index) => {
         console.log(path);
-        if(index === 5){
+        if(!path){
             dispatch(changeLanguage(language === 'zh-CN'?'en-US':'zh-CN'))
             return
         }
         navigate(path)
-        setCurrentIndex(index)
+        clickNav(index)
     }
     const goSearch = () => {
         console.log(searchValue);
@@ -65,7 +64,7 @@ export default memo((props) => {
 
     }
     return (
-        <Container isOpen={isOpen} currentIndex={currentIndex}>
+        <Container isOpen={isOpen}>
             {/* <div className='searchBox'>
             <input type="text" value={searchValue} onChange={(e)=>{setSearchValue(e.target.value)}}/>
             <SearchOutlined onClick={goSearch}/>
@@ -74,7 +73,7 @@ export default memo((props) => {
             {
                 excessPhone ? <ul className='tabs'>
                     {tabs.map((item,index) =>{
-                        return <li key={index} className={currentIndex === index ? 'active':'null'} onClick={()=>{changeTab(item.path,index)}}>{item.name[language]}</li>
+                        return <li key={index} className={activeNavIndex === index ? 'active':'null'} onClick={()=>{changeTab(item.path,index)}}>{item.name[language]}</li>
                     })}
                 </ul> : <div onClick={showModal} className='icon'>
                     {
@@ -85,7 +84,7 @@ export default memo((props) => {
             <div className='modal' style={{ display:`${excessPhone ? 'none':'block'}`}}>
                     <ul className='tabs-modal'>
                     {tabs.map((item,index) =>{
-                        return <li key={index} className={currentIndex === index ? 'active':'null'} onClick={()=>{changeTab(item.path,index)}}>{item.name[language]}</li>
+                        return <li key={index} className={activeNavIndex === index ? 'active':'null'} onClick={()=>{changeTab(item.path,index)}}>{item.name[language]}</li>
                     })}
                     </ul>
 

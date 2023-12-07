@@ -30,7 +30,7 @@ const FRONT = {
         "zh-CN": '前端',
         "en-US": 'Front'
     },
-    path:'/bbb'
+    path:'/web'
     
 }
 const END = {
@@ -45,9 +45,7 @@ const LANG = {
     name:{
         "zh-CN": 'English',
         "en-US": '中文'
-    },
-    path:'/ddd'
-    
+    }    
 }
 const CENTER = {
     "zh-CN": '个人中心',
@@ -82,7 +80,7 @@ const WECHAT = {
     "en-US": 'WeChat'
 }
 const EMAIL = {
-    "zh-CN": '电子邮件',
+    "zh-CN": '邮箱',
     "en-US": 'Email'
 }
 const GITHUB = {
@@ -92,6 +90,10 @@ const GITHUB = {
 const COPY = {
     "zh-CN": '复制',
     "en-US": 'copy'
+}
+const COPYSUCCESS = {
+    "zh-CN": '复制成功',
+    "en-US": 'Copy successfully'
 }
 const SAVE = {
     "zh-CN": '保存二维码',
@@ -119,6 +121,7 @@ export default {
     WECHAT,
     EMAIL,
     COPY,
+    COPYSUCCESS,
     SAVE,
     GITHUB,
     OPENLINK

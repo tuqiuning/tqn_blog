@@ -1,6 +1,7 @@
 import React, { memo,useState,useRef } from 'react';
 import {  Modal,Button,message,Image } from 'antd';
 import { useSelector } from 'react-redux';
+import { GithubOutlined,MailOutlined,WechatOutlined,PhoneOutlined } from '@ant-design/icons';
 import languageCode from '@/utils/language';
 import qrcode from '../../assets/img/wechat_qrcode.png'
 import { AboutWrapper } from './style'
@@ -37,7 +38,7 @@ export default memo(() => {
     navigator.clipboard.writeText(modalContent).then(()=>{
       messageApi.open({
         type:'success',
-        content:`${languageCode.COPY[language]}!`
+        content:`${languageCode.COPYSUCCESS[language]}!`
       })
     })
   }
@@ -64,16 +65,20 @@ export default memo(() => {
   return (
     <AboutWrapper>
       <div className='aboutItem' onClick={()=>showModal('PHONE')} >
-        {languageCode.PHONE[language]}
+      <PhoneOutlined style={{fontSize:"60px"}}/>
+        {/* {languageCode.PHONE[language]} */}
       </div>
       <div className='aboutItem' onClick={()=>showModal('WECHAT')} >
-        {languageCode.WECHAT[language]}
+      <WechatOutlined style={{fontSize:"60px"}}/>
+        {/* {languageCode.WECHAT[language]} */}
       </div>
       <div className='aboutItem' onClick={()=>showModal('EMAIL')} >
-        {languageCode.EMAIL[language]}
+      <MailOutlined style={{fontSize:"60px"}}/>
+        {/* {languageCode.EMAIL[language]} */}
       </div>
       <div className='aboutItem' onClick={()=>showModal('GITHUB')} >
-        {languageCode.GITHUB[language]}
+      <GithubOutlined style={{fontSize:"60px"}}/>
+        {/* {languageCode.GITHUB[language]} */}
       </div>
       <Modal title={modalTitle} footer={null} open={isModalOpen} onCancel={handleCancel} width={400}>
         <p>{modalContent}</p>
