@@ -28,4 +28,16 @@ export const HomeContainer = styled.div`
         display:flex;
         justify-content:center;
     }
+    .footer {
+        position:fixed;
+        width:100%;
+        bottom:20px;
+        display:flex;
+        justify-content:center;
+        a {
+            text-decoration: none; /* 去除默认的下划线 */
+	outline: none;	/* 去除旧版浏览器的点击后的外虚线框 */
+	color: #000;
+        }
+    }
 `

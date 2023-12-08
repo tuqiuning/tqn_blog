@@ -40,6 +40,9 @@ export default memo(() => {
           showSkill ? <Skill /> : <Project />
         }
       </div>
+      <div className='footer'>
+      <a href="https://beian.miit.gov.cn/" target="_blank">渝ICP备2023016344号-1</a>
+      </div>
     </HomeContainer>
   )
 })
