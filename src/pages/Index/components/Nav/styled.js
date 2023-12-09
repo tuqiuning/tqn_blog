@@ -64,6 +64,9 @@ export const Container =  styled.div`
     .icon {
         height:20px;
     }
+    .active {
+        color:#118add;
+    }
     .tabs-modal {
         background-color:#000;
         list-style:none;

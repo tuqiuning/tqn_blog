@@ -1,19 +1,19 @@
 import React, { memo, useEffect, useState } from 'react';
-import { useSelector,useDispatch } from 'react-redux';
-import {  useNavigate } from 'react-router-dom';
-import {  Drawer } from 'antd'
-import { MenuOutlined,CloseOutlined,SearchOutlined } from '@ant-design/icons';
+import { useSelector, useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { Drawer } from 'antd'
+import { MenuOutlined, CloseOutlined, SearchOutlined } from '@ant-design/icons';
 import { Container } from './styled';
 import languageCode from '@/utils/language';
 import store from '@/store';
 import { changeLanguage } from '@/store/features/counter';
- 
-export default memo(({activeNavIndex,clickNav}) => {
-    const {language} = useSelector((state)=>{
+
+export default memo(({ activeNavIndex, clickNav }) => {
+    const { language } = useSelector((state) => {
         return state.counter
     })
     const dispatch = useDispatch();
-    
+
     store.getState().counter.language;
     const tabs = [
         languageCode.HOME,
@@ -25,14 +25,14 @@ export default memo(({activeNavIndex,clickNav}) => {
     ]
     const [excessPhone, setExcessPhone] = useState(innerWidth >= 750); //是否大于750
     const [isOpen, setIsOpen] = useState(false); //是否打开菜单弹窗
-    const [showSearchBox,setShowSearchBox] = useState(false); //是否显示搜索框
-    const [searchValue,setSearchValue] = useState(''); //搜索
+    const [showSearchBox, setShowSearchBox] = useState(false); //是否显示搜索框
+    const [searchValue, setSearchValue] = useState(''); //搜索
     const navigate = useNavigate();
     useEffect(() => {
         // 监听屏幕宽度
-        window.addEventListener('resize',function(){
-                setExcessPhone(innerWidth >= 750)
-           
+        window.addEventListener('resize', function () {
+            setExcessPhone(innerWidth >= 750)
+
         })
         // 点击其它区域，关闭tabs弹窗
         // const modalEl = document.getElementsByClassName('mask');
@@ -47,10 +47,10 @@ export default memo(({activeNavIndex,clickNav}) => {
         // document.body.style.overflow = `${isOpen ? 'auto':'hidden'}`
     }
     // 切换tab
-    const changeTab = (path,index) => {
+    const changeTab = (path, index) => {
         console.log(path);
-        if(!path){
-            dispatch(changeLanguage(language === 'zh-CN'?'en-US':'zh-CN'))
+        if (!path) {
+            dispatch(changeLanguage(language === 'zh-CN' ? 'en-US' : 'zh-CN'))
             return
         }
         navigate(path)
@@ -58,7 +58,7 @@ export default memo(({activeNavIndex,clickNav}) => {
     }
     const goSearch = () => {
         console.log(searchValue);
-        if(searchValue === ''){
+        if (searchValue === '') {
             return
         }
         const apiURL = `https://cn.bing.com/search?q=涂邱宁 ${searchValue}`
@@ -75,7 +75,7 @@ export default memo(({activeNavIndex,clickNav}) => {
         setShowSearchBox(false)
         NavTranslate('0px')
     }
-    const NavTranslate = (val)=>{
+    const NavTranslate = (val) => {
         const rotateBox = document.getElementsByClassName('rotateBox');
         rotateBox[0].style.transform = `translate(0,${val})`
         rotateBox[0].style.transition = 'transform 0.5s ease-out'
@@ -86,56 +86,56 @@ export default memo(({activeNavIndex,clickNav}) => {
             <input type="text" value={searchValue} onChange={(e)=>{setSearchValue(e.target.value)}}/>
             <SearchOutlined onClick={goSearch}/>
             </div> */}
-            
+
             {
-                excessPhone ? 
-                <div className='rotateContainer'>
-                    <div className='rotateBox'>
-                        <ul className='tabs' id='tabs'>
-                        {tabs.map((item,index) =>{
-                            return <li key={index} className={activeNavIndex === index ? 'active':'null'} onClick={()=>{changeTab(item.path,index)}}>{item.name[language]}</li>
-                        })}
-                        </ul> 
-                        <div className="searchBox">
-                            <input type="text" value={searchValue} onChange={e=>{setSearchValue(e.target.value) }}/>
-                            <SearchOutlined onClick={goSearch}/>
+                excessPhone ?
+                    <div className='rotateContainer'>
+                        <div className='rotateBox'>
+                            <ul className='tabs' id='tabs'>
+                                {tabs.map((item, index) => {
+                                    return <li key={index} className={activeNavIndex === index ? 'active' : 'null'} onClick={() => { changeTab(item.path, index) }}>{item.name[language]}</li>
+                                })}
+                            </ul>
+                            <div className="searchBox">
+                                <input type="text" value={searchValue} onChange={e => { setSearchValue(e.target.value) }} />
+                                <SearchOutlined onClick={goSearch} />
+                            </div>
                         </div>
+
                     </div>
-                    
-                </div>
-                
-                : 
-                <div onClick={showModal} className='icon'>
-                    <MenuOutlined />
-                </div>
+
+                    :
+                    <div onClick={showModal} className='icon'>
+                        <MenuOutlined />
+                    </div>
             }
             {
-                excessPhone &&  <div className='searchIcon'>
-                    {showSearchBox ? <CloseOutlined onClick={closeSearch}/> : <SearchOutlined onClick={openSearch}/>}
-              </div>
+                excessPhone && <div className='searchIcon'>
+                    {showSearchBox ? <CloseOutlined onClick={closeSearch} /> : <SearchOutlined onClick={openSearch} />}
+                </div>
             }
-           <Drawer
-         closable={false}
-        placement="right"
-        width={200}
-        onClose={()=>setIsOpen(false)}
-        open={isOpen}
-      >
-        <div style={{display:'flex',justifyContent:'flex-end',marginBottom:'20px'}}>
-        <CloseOutlined onClick={()=>setIsOpen(false)}/>
-        </div>
-        <ul className='tabs-modal' style={{listStyle:'none'}}>
-        {tabs.map((item,index) =>{
-            return <li 
-                key={index} 
-                style={{marginBottom:'16px',cursor:'pointer',color:`${activeNavIndex === index ? '#118add':'#000'}`}}
-                onClick={()=>{changeTab(item.path,index)}}
+            <Drawer
+                closable={false}
+                placement="right"
+                width={200}
+                onClose={() => setIsOpen(false)}
+                open={isOpen}
             >
-                {item.name[language]}
-            </li>
-        })}
-        </ul>
-      </Drawer>
+                <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '20px' }}>
+                    <CloseOutlined onClick={() => setIsOpen(false)} />
+                </div>
+                <ul className='tabs-modal' style={{ listStyle: 'none' }}>
+                    {tabs.map((item, index) => {
+                        return <li
+                            key={index}
+                            style={{ marginBottom: '16px', cursor: 'pointer', color: `${activeNavIndex === index ? '#118add' : '#000'}` }}
+                            onClick={() => { changeTab(item.path, index) }}
+                        >
+                            {item.name[language]}
+                        </li>
+                    })}
+                </ul>
+            </Drawer>
             {/* <div className='modal' style={{ display:`${excessPhone ? 'none':'block'}`}}>
                     <ul className='tabs-modal'>
                     {tabs.map((item,index) =>{
@@ -148,5 +148,5 @@ export default memo(({activeNavIndex,clickNav}) => {
 
         </Container>
     )
-   
+
 })
