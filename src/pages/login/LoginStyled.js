@@ -12,8 +12,22 @@ export const LoginStyled = styled.div`
   background-size:cover;
   background-position:center;
   background-repeat: no-repeat;
-
-  .loginBox {
+.centerBox {
+  width:300px;
+    height:360px;
+   overflow:hidden;
+    .loginAndRegister {
+      width:600px;
+      height:100%;
+      display:flex;
+      transform:translateX(-300px);
+    }
+}
+.registerBox {
+  z-index:9;
+}
+  .loginBox,.registerBox {
+    position:relative;
     color:#fff;
     width:300px;
     height:360px;
@@ -58,13 +72,29 @@ export const LoginStyled = styled.div`
     }
     .btn {
       cursor:pointer;
-      margin-top:60px;
+      margin-top:40px;
       text-align:center;
       width:64%;
       height:40px;
       background-color:rgba(84,84,84,.8);
       border-radius:20px;
       line-height:40px;
+    }
+    .btn1 {
+      cursor:pointer;
+      margin-top:80px;
+      text-align:center;
+      width:64%;
+      height:40px;
+      background-color:rgba(84,84,84,.8);
+      border-radius:20px;
+      line-height:40px;
+    }
+    .switchBtn {
+      cursor:pointer;
+      margin-top:10px;
+      font-size:14px;
+      color:#aaa;
     }
   }
 `;
