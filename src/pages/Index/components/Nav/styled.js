@@ -53,6 +53,7 @@ export const Container =  styled.div`
             }
         }
     }
+    
     .searchIcon {
         height:30px;
         display:flex;
@@ -63,41 +64,16 @@ export const Container =  styled.div`
     .icon {
         height:20px;
     }
-    .modal {
-        color:#000;
-        border-top:${props => props.isOpen ? '1px':'0'} solid #d4d4d4;
-        border-bottom:${props => props.isOpen ? '1px':'0'} solid #d4d4d4;
-        position:absolute;
-        z-index:9;
-        top:40px;
-        right:-20px;
-        width:100vw !important;
-        height:${props => props.isOpen ? 'calc(100vh - 60px)':'0'};
-        overflow:hidden;
-        transition:height 0.5s ease,border-top 0.5s ease,border-bottom 0.5s ease;
-        .tabs-modal {
-            background-color:#fff;
-            list-style:none;
-            padding-top:10px;
-            padding-bottom:1px;
-            padding-left:30px;
-            li {
-                margin-bottom:10px;
-                
-            } 
-        }
-        .mask {
-            position:absolute;
-            z-index:9;
-            width:100%;
-            top:135px;
-            left:0;
-            height:calc(100vh - 196px);
-            background-color:rgba(0,0,0,.3)
-        }
-    }
-    .active {
-        color:#118add;
+    .tabs-modal {
+        background-color:#000;
+        list-style:none;
+        padding-top:10px;
+        padding-bottom:1px;
+        padding-left:30px;
+        li {
+            margin-bottom:10px;
+            
+        } 
     }
     
 `

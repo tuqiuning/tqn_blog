@@ -1,6 +1,7 @@
 import React, { memo, useEffect, useState } from 'react';
 import { useSelector,useDispatch } from 'react-redux';
 import {  useNavigate } from 'react-router-dom';
+import {  Drawer } from 'antd'
 import { MenuOutlined,CloseOutlined,SearchOutlined } from '@ant-design/icons';
 import { Container } from './styled';
 import languageCode from '@/utils/language';
@@ -34,16 +35,16 @@ export default memo(({activeNavIndex,clickNav}) => {
            
         })
         // 点击其它区域，关闭tabs弹窗
-        const modalEl = document.getElementsByClassName('mask');
-        modalEl[0].addEventListener('click',(e)=>{
-            console.log(e);
-            setIsOpen(false)
-            document.body.style.overflow = 'auto'
-        })
+        // const modalEl = document.getElementsByClassName('mask');
+        // modalEl[0].addEventListener('click',(e)=>{
+        //     console.log(e);
+        //     setIsOpen(false)
+        //     document.body.style.overflow = 'auto'
+        // })
     }, [])
     const showModal = () => {
         setIsOpen(!isOpen)
-        document.body.style.overflow = `${isOpen ? 'auto':'hidden'}`
+        // document.body.style.overflow = `${isOpen ? 'auto':'hidden'}`
     }
     // 切换tab
     const changeTab = (path,index) => {
@@ -75,14 +76,12 @@ export default memo(({activeNavIndex,clickNav}) => {
         NavTranslate('0px')
     }
     const NavTranslate = (val)=>{
-        // const tabs = document.getElementsByClassName('tabs');
         const rotateBox = document.getElementsByClassName('rotateBox');
-        // tabs[0].style.transform = `translateY(-33px)`
         rotateBox[0].style.transform = `translate(0,${val})`
         rotateBox[0].style.transition = 'transform 0.5s ease-out'
     }
     return (
-        <Container isOpen={isOpen}>
+        <Container>
             {/* <div className='searchBox'>
             <input type="text" value={searchValue} onChange={(e)=>{setSearchValue(e.target.value)}}/>
             <SearchOutlined onClick={goSearch}/>
@@ -107,9 +106,7 @@ export default memo(({activeNavIndex,clickNav}) => {
                 
                 : 
                 <div onClick={showModal} className='icon'>
-                    {
-                        isOpen ? <CloseOutlined /> : <MenuOutlined />
-                    }
+                    <MenuOutlined />
                 </div>
             }
             {
@@ -117,8 +114,29 @@ export default memo(({activeNavIndex,clickNav}) => {
                     {showSearchBox ? <CloseOutlined onClick={closeSearch}/> : <SearchOutlined onClick={openSearch}/>}
               </div>
             }
-           
-            <div className='modal' style={{ display:`${excessPhone ? 'none':'block'}`}}>
+           <Drawer
+         closable={false}
+        placement="right"
+        width={200}
+        onClose={()=>setIsOpen(false)}
+        open={isOpen}
+      >
+        <div style={{display:'flex',justifyContent:'flex-end',marginBottom:'20px'}}>
+        <CloseOutlined onClick={()=>setIsOpen(false)}/>
+        </div>
+        <ul className='tabs-modal' style={{listStyle:'none'}}>
+        {tabs.map((item,index) =>{
+            return <li 
+                key={index} 
+                style={{marginBottom:'16px',cursor:'pointer',color:`${activeNavIndex === index ? '#118add':'#000'}`}}
+                onClick={()=>{changeTab(item.path,index)}}
+            >
+                {item.name[language]}
+            </li>
+        })}
+        </ul>
+      </Drawer>
+            {/* <div className='modal' style={{ display:`${excessPhone ? 'none':'block'}`}}>
                     <ul className='tabs-modal'>
                     {tabs.map((item,index) =>{
                         return <li key={index} className={activeNavIndex === index ? 'active':'null'} onClick={()=>{changeTab(item.path,index)}}>{item.name[language]}</li>
@@ -126,7 +144,7 @@ export default memo(({activeNavIndex,clickNav}) => {
                     </ul>
 
                 <div className='mask'></div>
-            </div>
+            </div> */}
 
         </Container>
     )

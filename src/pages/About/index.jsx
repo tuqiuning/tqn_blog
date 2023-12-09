@@ -46,20 +46,11 @@ export default memo(() => {
     if(type === 'GITHUB'){
       window.open(modalContent)
     }else {
-      const url = 'https://profile-avatar.csdnimg.cn/59c225e0c3d245df8846d9e231c21c2f_m0_45067620.jpg!1';
-      const name = 'antd';
-      const x = new XMLHttpRequest();
-      const resourceUrl = url;
-      x.open('GET', resourceUrl, true);
-      x.responseType = 'blob';
-      x.onload = function () {
-        const urls = window.URL.createObjectURL(x.response);
-        const a = document.createElement('a');
-        a.href = urls;
-        a.download = name + '.png';
-        a.click();
-      };
-      x.send();
+      const link = document.createElement('a')
+      link.href = qrcode;
+      link.download = 'qrcode'
+      link.click()
+      link.remove()
     }
   }
   return (
