@@ -54,7 +54,9 @@ export default memo(({ activeNavIndex, clickNav }) => {
             return
         }
         navigate(path)
-        clickNav(index)
+        clickNav(index);
+        // 将当前激活的Nav保存到sessionStroage,解决刷新后Nav的激活回到首页的问题
+        sessionStorage.setItem('activeNav', index)
     }
     const goSearch = () => {
         console.log(searchValue);
@@ -128,7 +130,7 @@ export default memo(({ activeNavIndex, clickNav }) => {
                     {tabs.map((item, index) => {
                         return <li
                             key={index}
-                            style={{ marginBottom: '16px', cursor: 'pointer', color: `${activeNavIndex === index ? '#118add' : '#000'}` }}
+                            style={{ marginBottom: '16px', cursor: 'pointer', color: `${activeNavIndex === index ? '#1677ff' : '#000'}` }}
                             onClick={() => { changeTab(item.path, index) }}
                         >
                             {item.name[language]}

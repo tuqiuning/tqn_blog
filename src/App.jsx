@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Link, HashRouter, Routes } from "react-router-dom";
+import { Route, Link, HashRouter, Routes,Navigate  } from "react-router-dom";
 // import { Routes, Route, Link, BrowserRouter } from "react-router";
 import Login from "./pages/login/index";
 import My from "./pages/My/My.jsx";
@@ -15,11 +15,10 @@ function App(props) {
     <HashRouter>
       <Routes>
         <Route path="/login" Component={Login}></Route>
-        <Route path="/" element={<Index />}>
+        <Route exact path="/" element={<Index />}>
           <Route path="home" element={<Home />}></Route>
           <Route path="about" element={<About />}></Route>
           <Route path="web" element={<Web />}></Route>
-          
         </Route>
         <Route path="/my" element={< My/>}></Route>
       </Routes>

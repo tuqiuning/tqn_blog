@@ -24,7 +24,7 @@ export const Container =  styled.div`
                 cursor:pointer;
                 &:nth-child(-n+5) {
                     &:hover {
-                        color:#118add
+                        color:#1677ff
                     }
                 }
             }
@@ -65,7 +65,7 @@ export const Container =  styled.div`
         height:20px;
     }
     .active {
-        color:#118add;
+        color:#1677ff;
     }
     .tabs-modal {
         background-color:#000;

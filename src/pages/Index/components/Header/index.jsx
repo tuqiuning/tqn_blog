@@ -9,7 +9,8 @@ import { HeaderWrapper } from './style'
 
 export default memo(() => {
   const [currentDate, setCurrentDate] = useState(new Date());
-  const [activeNavIndex,setActiveNavIndex] = useState(0); //导航栏激活的下标
+  const [activeNavIndex,setActiveNavIndex] = useState(sessionStorage.getItem('activeNav') || 0); //导航栏激活的下标
+  console.log(activeNavIndex,typeof activeNavIndex);
   const { language } = useSelector((state) => {
     return state.counter
   })
@@ -27,7 +28,7 @@ export default memo(() => {
       <div className='header-left' onClick={goHome}>{languageCode.TUQIUNING[language]}</div>
       <div className='header-center'>{dayjs(currentDate).format(`${language === 'zh-CN' ? 'YYYY年MM月DD日' : 'MMM DD,YYYY'}`)}</div>
       <div className='header-right'>
-        <Nav activeNavIndex={activeNavIndex} clickNav={(index)=>clickNav(index)}/>
+        <Nav activeNavIndex={parseInt(activeNavIndex)} clickNav={(index)=>clickNav(index)}/>
       </div>
     </HeaderWrapper>
   )

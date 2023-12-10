@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import '@/assets/style/font.less';
 
 export const HeaderWrapper = styled.header`
     z-index:99;
@@ -11,8 +12,10 @@ export const HeaderWrapper = styled.header`
     color:#fff;
     .header-left {
         flex:1;
-        fontFamily: 'douyuFont';
+        font-family: cursive;
+        font-size:24px;
         cursor:pointer;
+        line-height:30px;
     }
     .header-right{
         flex:1;
@@ -23,4 +26,5 @@ export const HeaderWrapper = styled.header`
         flex-grow:1;
         text-align:center;
         cursor:pointer;
+        line-height:30px;
 }`

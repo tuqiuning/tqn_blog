@@ -16,7 +16,6 @@ export const AboutWrapper = styled.div`
         display:flex;
         justify-content:center;
         align-items:center;
-        cursor:pointer;
         font-size:28px;
         box-shadow:0px 0px 10px #d3d3d3;
     }

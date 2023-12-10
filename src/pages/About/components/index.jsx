@@ -25,16 +25,22 @@ export default memo(({type}) => {
   const handle = () =>{
     if(type === 'GITHUB'){
       window.open(modalContent)
-    }else {
+    }else if(type === 'WECHAT') {
       const link = document.createElement('a')
       link.href = qrcode;
       link.download = 'qrcode'
+      link.click()
+      link.remove()
+    }else {
+      const link = document.createElement('a')
+      link.href = 'tel:13101085395';
       link.click()
       link.remove()
     }
   }
   return (
     <ScaleWrapper>
+      <div className='main'>
       <div className='title'>
         {languageCode[type][language]}
       </div>
@@ -42,15 +48,18 @@ export default memo(({type}) => {
           type === 'WECHAT' ? <Image
           style={{marginBottom:'20px'}}
           width={160}
+          height={160}
           src={qrcode}
           /> : <p className='content'>{modalContent}</p>
         }
+      </div>
+      
 
         <div className='copyBtn' style={{width:'100%',display:'flex',justifyContent:'flex-end',gap:'20px',marginTop:'10px'}}>
           {
-            ['WECHAT','GITHUB'].includes(type) && 
+            ['PHONE','WECHAT','GITHUB',].includes(type) && 
               <Button type="primary" onClick={()=>handle()}>
-              { languageCode[`${type === 'GITHUB' ? 'OPENLINK':'SAVE'}`][language] }
+              { languageCode[`${type === 'GITHUB' ? 'OPENLINK':type === 'PHONE'?'CALL':'SAVE'}`][language] }
             </Button>
           }
         

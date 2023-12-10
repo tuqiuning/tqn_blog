@@ -76,7 +76,7 @@ const PHONE = {
     "en-US": 'Phone'
 }
 const WECHAT = {
-    "zh-CN": '微信号',
+    "zh-CN": '微信二维码',
     "en-US": 'WeChat'
 }
 const EMAIL = {
@@ -103,6 +103,10 @@ const OPENLINK = {
     "zh-CN": '打开链接',
     "en-US": 'Open the link'
 }
+const CALL = {
+    "zh-CN": '拨打电话',
+    "en-US": 'Making a call'
+}
 export default {
     TUQIUNING,
     HOME,
@@ -124,5 +128,6 @@ export default {
     COPYSUCCESS,
     SAVE,
     GITHUB,
-    OPENLINK
+    OPENLINK,
+    CALL
 }
