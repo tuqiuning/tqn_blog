@@ -14,7 +14,7 @@ function App(props) {
   return (
     <HashRouter>
       <Routes>
-        <Route path="/login" Component={Login}></Route>
+        {/* <Route path="/login" Component={Login}></Route> */}
         <Route exact path="/" element={<Index />}>
           <Route path="home" element={<Home />}></Route>
           <Route path="about" element={<About />}></Route>

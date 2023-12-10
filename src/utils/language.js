@@ -107,6 +107,10 @@ const CALL = {
     "zh-CN": '拨打电话',
     "en-US": 'Making a call'
 }
+const SENDEMAIL = {
+    "zh-CN": '发邮件',
+    "en-US": 'send a email'
+}
 export default {
     TUQIUNING,
     HOME,
@@ -129,5 +133,6 @@ export default {
     SAVE,
     GITHUB,
     OPENLINK,
-    CALL
+    CALL,
+    SENDEMAIL
 }

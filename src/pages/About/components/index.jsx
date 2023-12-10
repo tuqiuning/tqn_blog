@@ -31,9 +31,14 @@ export default memo(({type}) => {
       link.download = 'qrcode'
       link.click()
       link.remove()
-    }else {
+    }else if(type === 'PHONE'){
       const link = document.createElement('a')
       link.href = 'tel:13101085395';
+      link.click()
+      link.remove()
+    }else {
+      const link = document.createElement('a')
+      link.href = 'mailto:tuqiuning@gmail.com';
       link.click()
       link.remove()
     }
@@ -50,6 +55,7 @@ export default memo(({type}) => {
           width={160}
           height={160}
           src={qrcode}
+          preview={false}
           /> : <p className='content'>{modalContent}</p>
         }
       </div>
@@ -57,15 +63,10 @@ export default memo(({type}) => {
 
         <div className='copyBtn' style={{width:'100%',display:'flex',justifyContent:'flex-end',gap:'20px',marginTop:'10px'}}>
           {
-            ['PHONE','WECHAT','GITHUB',].includes(type) && 
               <Button type="primary" onClick={()=>handle()}>
-              { languageCode[`${type === 'GITHUB' ? 'OPENLINK':type === 'PHONE'?'CALL':'SAVE'}`][language] }
+              { languageCode[`${type === 'GITHUB' ? 'OPENLINK':type === 'PHONE'?'CALL':type === 'EMAIL'?'SENDEMAIL':'SAVE'}`][language] }
             </Button>
           }
-        
-        <Button type="primary" onClick={copyPhone}>
-          {languageCode.COPY[language]}
-        </Button>
         </div>
     </ScaleWrapper>
   )
