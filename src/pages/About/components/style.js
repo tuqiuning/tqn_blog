@@ -15,9 +15,17 @@ export const ScaleWrapper = styled.div`
         .content {
             font-size:16px;
             margin-bottom:20px;
+            background:linear-gradient(to right,#000,#000) no-repeat right bottom;
+            background-size:0 1px;
+            padding-bottom:5px;
+            transition:background-size 0.5s ease;
+            cursor:pointer;
+        }
+        .content:hover {
+            background-position:left bottom;
+            background-size:100% 1px;
         }
     }
-    
     .copyBtn {
         position:absolute;
         right:20px;

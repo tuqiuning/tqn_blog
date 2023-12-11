@@ -24,7 +24,7 @@ export default memo(() => {
     setActiveNavIndex(index);
   } 
   return (
-    <HeaderWrapper className='header'>
+    <HeaderWrapper language={language}>
       <div className='header-left' onClick={goHome}>{languageCode.TUQIUNING[language]}</div>
       <div className='header-center'>{dayjs(currentDate).format(`${language === 'zh-CN' ? 'YYYY年MM月DD日' : 'MMM DD,YYYY'}`)}</div>
       <div className='header-right'>

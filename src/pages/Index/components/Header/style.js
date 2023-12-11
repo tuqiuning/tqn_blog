@@ -12,7 +12,7 @@ export const HeaderWrapper = styled.header`
     color:#fff;
     .header-left {
         flex:1;
-        font-family: cursive;
+        font-family: ${props => props.language === 'zh-CN' ? 'cursive':'douyuFont'};
         font-size:24px;
         cursor:pointer;
         line-height:30px;
