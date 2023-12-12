@@ -22,9 +22,17 @@ export const Container =  styled.div`
             white-space:nowrap;
             li {
                 cursor:pointer;
-                &:nth-child(-n+5) {
+                transition:.1s;
+                /* 切换中英文的hover不加颜色效果 */
+                &:nth-child(-n+3) {
                     &:hover {
-                        color:#1677ff
+                        color:#1677ff;
+                    }
+                }
+                /* 处于激活状态的hover不加文字变小效果 */
+                &:not(.active) {
+                    &:hover {
+                        font-size:15px;
                     }
                 }
             }

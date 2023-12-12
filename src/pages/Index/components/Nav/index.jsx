@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { Drawer } from 'antd'
 import { MenuOutlined, CloseOutlined, SearchOutlined } from '@ant-design/icons';
+import classNames from 'classnames';
 import { Container } from './styled';
 import languageCode from '@/utils/language';
 import store from '@/store';
@@ -95,7 +96,13 @@ export default memo(({ activeNavIndex, clickNav }) => {
                         <div className='rotateBox'>
                             <ul className='tabs' id='tabs'>
                                 {tabs.map((item, index) => {
-                                    return <li key={index} className={activeNavIndex === index ? 'active' : 'null'} onClick={() => { changeTab(item.path, index) }}>{item.name[language]}</li>
+                                    return <li 
+                                    key={index} 
+                                    className={activeNavIndex === index ? 'active' : 'null'} 
+                                    onClick={() => { changeTab(item.path, index) }}
+                                    >
+                                        {item.name[language]}
+                                    </li>
                                 })}
                             </ul>
                             <div className="searchBox">

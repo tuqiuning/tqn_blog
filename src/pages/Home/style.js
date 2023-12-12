@@ -29,16 +29,22 @@ export const HomeContainer = styled.div`
         justify-content:center;
     }
     .footer {
-        position:fixed;
+        position:absolute;
         width:100%;
-        bottom:20px;
+        bottom:10px;
         display:flex;
+        flex-wrap:wrap;
         justify-content:center;
         a {
+            margin-right:5px;
             font-size:12px;
-             /* 去除默认的下划线 text-decoration: none;*/
+             /* 去除默认的下划线 */
+            text-decoration: none;
             outline: none;	/* 去除旧版浏览器的点击后的外虚线框 */
-            color: #000;
+            color: #333;
+            &:hover {
+                text-decoration: underline;
+            }
         }
     }
 `

@@ -3,7 +3,8 @@ import { useSelector } from 'react-redux';
 import classNames from 'classnames';
 import languageCode from '@/utils/language';
 import Skill from './components/Skill';
-import Project from './components/Project'
+import Project from './components/Project';
+import icon from '@/assets/icon/备案图标.png';
 
 import {HomeContainer} from './style'
 
@@ -41,6 +42,8 @@ export default memo(() => {
         }
       </div>
       <div className='footer'>
+        <img src={icon} alt="" width={15} height={15}/>
+      <a href="https://beian.mps.gov.cn/#/query/webSearch?code=50011302222072\" rel="noreferrer" target="_blank">渝公网安备50011302222072</a>
       <a href="https://beian.miit.gov.cn/" target="_blank">渝ICP备2023016344号-1</a>
       </div>
     </HomeContainer>

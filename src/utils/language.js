@@ -28,7 +28,7 @@ const WORK = {
 const FRONT = {
     name:{
         "zh-CN": '前端',
-        "en-US": 'Front'
+        "en-US": 'Frontend'
     },
     path:'/web'
     
