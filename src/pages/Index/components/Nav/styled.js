@@ -1,18 +1,18 @@
 import styled from "styled-components";
 export const Container =  styled.div`
-    color:#fff;
+    color:${props => props.navTextColor};
     position: relative;
     display:flex;
     .rotateContainer {
-        height:30px;
+        height:36px;
         overflow:hidden;
         .rotateBox {
             display:flex;
             flex-direction:column;
-            align-items:center;
+            align-items:flex-end;
         }
         .tabs {
-            height:30px;
+            height:36px;
             list-style:none;
             display:flex;
             
@@ -30,20 +30,23 @@ export const Container =  styled.div`
                     }
                 }
                 /* 处于激活状态的hover不加文字变小效果 */
+                /**
                 &:not(.active) {
                     &:hover {
                         font-size:15px;
                     }
                 }
+                */
+               
             }
         }
         .searchBox {
             width:200px;
-            height:30px;
+            height:36px;
             box-sizing:border-box;
             border-radius:24px;
-            border:1px solid #fff;
-            background-color:#000;
+            border:1px solid ${props => props.navTextColor};
+            background-color:transparent;
     
             margin-right:10px;
             display:flex;
@@ -51,22 +54,36 @@ export const Container =  styled.div`
             padding:0 5px;
             overflow:hidden;
             input {
-                color:#fff;
+                color:${props => props.navTextColor};
                 border:none;
                 outline:none;
                 margin-left:5px;
-                height:22px;
+                height:30px;
                 width:90%;
-                background-color:#000
+                font-size:16px;
+                background-color:transparent;
             }
         }
     }
     
-    .searchIcon {
-        height:30px;
+    .searchSwitchIcon {
+        height:36px;
         display:flex;
         margin-left:10px;
         align-items:center;
+        position:relative;
+        font-size:20px;
+        .closeIcon,.searchIcon {
+            position:absolute;
+            transition:scale .5s ease;
+        }
+        .closeIcon {
+            scale:${props => props.showSearchBox ? 1 : 0};
+        }
+        .searchIcon {
+            scale:${props => props.showSearchBox ? 0 : 1};
+        }
+        
     }
     
     .icon {

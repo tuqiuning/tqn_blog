@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const IndexContainer = styled.div`
-    width:100%;
+    width:100vw;
     height:100vh;
     /*background: linear-gradient(-45deg, #ee7752, #333, #23a6d5, #ff0000)*/
 	background-size: 400% 400%;

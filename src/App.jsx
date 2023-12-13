@@ -5,6 +5,7 @@ import Login from "./pages/login/index";
 import My from "./pages/My/My.jsx";
 import Index from "./pages/Index/index.jsx";
 import Home from "./pages/Home";
+import HomeNew from "./pages/HomeNew";
 import About from "./pages/About";
 import Web from './pages/Web';
 import "./App.css";
@@ -17,6 +18,7 @@ function App(props) {
         {/* <Route path="/login" Component={Login}></Route> */}
         <Route exact path="/" element={<Index />}>
           <Route path="home" element={<Home />}></Route>
+          <Route path="homeNew" element={<HomeNew />}></Route>
           <Route path="about" element={<About />}></Route>
           <Route path="web" element={<Web />}></Route>
         </Route>

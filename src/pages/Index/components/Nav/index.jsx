@@ -8,6 +8,8 @@ import { Container } from './styled';
 import languageCode from '@/utils/language';
 import store from '@/store';
 import { changeLanguage } from '@/store/features/counter';
+import EnglishIcon from '@/assets/icon/enSvg.jsx';
+import ChinessIcon from '@/assets/icon/zhSvg.jsx';
 
 export default memo(({ activeNavIndex, clickNav }) => {
     const { language } = useSelector((state) => {
@@ -22,12 +24,13 @@ export default memo(({ activeNavIndex, clickNav }) => {
         // languageCode.WORK,
         languageCode.FRONT,
         // languageCode.END,
-        languageCode.LANG,
+        // languageCode.LANG,
     ]
     const [excessPhone, setExcessPhone] = useState(innerWidth >= 750); //是否大于750
     const [isOpen, setIsOpen] = useState(false); //是否打开菜单弹窗
     const [showSearchBox, setShowSearchBox] = useState(false); //是否显示搜索框
     const [searchValue, setSearchValue] = useState(''); //搜索
+    const [navTextColor,setNavTextColor] = useState('#ffffff'); //导航栏文字颜色
     const navigate = useNavigate();
     useEffect(() => {
         // 监听屏幕宽度
@@ -49,6 +52,11 @@ export default memo(({ activeNavIndex, clickNav }) => {
     }
     // 切换tab
     const changeTab = (path, index) => {
+        if(index === 0) {
+            setNavTextColor('#ffffff')
+        }else {
+            setNavTextColor('#000000')
+        }
         console.log(path);
         if (!path) {
             dispatch(changeLanguage(language === 'zh-CN' ? 'en-US' : 'zh-CN'))
@@ -71,7 +79,7 @@ export default memo(({ activeNavIndex, clickNav }) => {
     // 打开搜索框
     const openSearch = () => {
         setShowSearchBox(true)
-        NavTranslate('-30px')
+        NavTranslate('-36px')
     }
     // 关闭搜索框
     const closeSearch = () => {
@@ -83,8 +91,13 @@ export default memo(({ activeNavIndex, clickNav }) => {
         rotateBox[0].style.transform = `translate(0,${val})`
         rotateBox[0].style.transition = 'transform 0.5s ease-out'
     }
+    // 切换语言
+    const changeLang = () => {
+        console.log(language);
+        dispatch(changeLanguage(language === 'zh-CN' ? 'en-US' : 'zh-CN'))
+    }
     return (
-        <Container>
+        <Container showSearchBox={showSearchBox} navTextColor={navTextColor}>
             {/* <div className='searchBox'>
             <input type="text" value={searchValue} onChange={(e)=>{setSearchValue(e.target.value)}}/>
             <SearchOutlined onClick={goSearch}/>
@@ -96,14 +109,21 @@ export default memo(({ activeNavIndex, clickNav }) => {
                         <div className='rotateBox'>
                             <ul className='tabs' id='tabs'>
                                 {tabs.map((item, index) => {
-                                    return <li 
-                                    key={index} 
-                                    className={activeNavIndex === index ? 'active' : 'null'} 
-                                    onClick={() => { changeTab(item.path, index) }}
+                                    return <li
+                                        key={index}
+                                        className={activeNavIndex === index ? 'active' : 'null'}
+                                        onClick={() => { changeTab(item.path, index) }}
                                     >
                                         {item.name[language]}
                                     </li>
                                 })}
+                                <li>
+                                    {
+                                        language === 'zh-CN' ? 
+                                        <div onClick={()=>changeLang()}><ChinessIcon color={navTextColor}/> </div>:
+                                        <div onClick={()=>changeLang()}><EnglishIcon color={navTextColor}/></div>
+                                    }
+                                </li>
                             </ul>
                             <div className="searchBox">
                                 <input type="text" value={searchValue} onChange={e => { setSearchValue(e.target.value) }} />
@@ -119,8 +139,10 @@ export default memo(({ activeNavIndex, clickNav }) => {
                     </div>
             }
             {
-                excessPhone && <div className='searchIcon'>
-                    {showSearchBox ? <CloseOutlined onClick={closeSearch} /> : <SearchOutlined onClick={openSearch} />}
+                excessPhone && <div className='searchSwitchIcon'>
+                        <CloseOutlined className='closeIcon' onClick={closeSearch} />
+                        <SearchOutlined className='searchIcon' onClick={openSearch} />
+                    {/* {showSearchBox ? <CloseOutlined onClick={closeSearch} /> : <SearchOutlined onClick={openSearch} />} */}
                 </div>
             }
             <Drawer
@@ -145,16 +167,6 @@ export default memo(({ activeNavIndex, clickNav }) => {
                     })}
                 </ul>
             </Drawer>
-            {/* <div className='modal' style={{ display:`${excessPhone ? 'none':'block'}`}}>
-                    <ul className='tabs-modal'>
-                    {tabs.map((item,index) =>{
-                        return <li key={index} className={activeNavIndex === index ? 'active':'null'} onClick={()=>{changeTab(item.path,index)}}>{item.name[language]}</li>
-                    })}
-                    </ul>
-
-                <div className='mask'></div>
-            </div> */}
-
         </Container>
     )
 

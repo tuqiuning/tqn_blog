@@ -2,20 +2,23 @@ import styled from "styled-components";
 import '@/assets/style/font.less';
 
 export const HeaderWrapper = styled.header`
+    box-sizing:border-box;
     z-index:99;
-    position:sticky;
-    top:0;
+    position:absolute;
+    width:100%;
+    top:10px;
     display:flex;
     justify-content:space-between;
-    padding:20px;
-    background-color:#000;
-    color:#fff;
+    padding:10px 40px 10px 20px;
+    background-color:transparent;
+    color:${props => props.logoColor};
     .header-left {
         flex:1;
         font-family: ${props => props.language === 'zh-CN' ? 'cursive':'douyuFont'};
         font-size:24px;
         cursor:pointer;
-        line-height:30px;
+        display:flex;
+        align-items:center;
     }
     .header-right{
         flex:1;
@@ -26,5 +29,5 @@ export const HeaderWrapper = styled.header`
         flex-grow:1;
         text-align:center;
         cursor:pointer;
-        line-height:30px;
+        line-height:36px;
 }`

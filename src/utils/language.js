@@ -7,7 +7,7 @@ const HOME = {
         "zh-CN": '首页',
         "en-US": 'Home'
     },
-    path:'/home'
+    path:'/homeNew'
 }
 const FORME = {
     name:{
@@ -77,7 +77,7 @@ const PHONE = {
 }
 const WECHAT = {
     "zh-CN": '微信二维码',
-    "en-US": 'WeChat'
+    "en-US": 'WeChat QRCode'
 }
 const EMAIL = {
     "zh-CN": '邮箱',
@@ -97,7 +97,7 @@ const COPYSUCCESS = {
 }
 const SAVE = {
     "zh-CN": '保存二维码',
-    "en-US": 'Save QR code'
+    "en-US": 'Save QRCode'
 }
 const OPENLINK = {
     "zh-CN": '打开链接',
