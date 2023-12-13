@@ -11,7 +11,6 @@ import { HeaderWrapper } from './style'
 export default memo(() => {
   const [currentDate, setCurrentDate] = useState(new Date());
   const [activeNavIndex,setActiveNavIndex] = useState(sessionStorage.getItem('activeNav') || 0); //导航栏激活的下标
-  console.log(activeNavIndex,typeof activeNavIndex);
   const [logoColor,setLogoColor] = useState('#ffffff');
   const { language } = useSelector((state) => {
     return state.counter
@@ -31,7 +30,7 @@ export default memo(() => {
     }
   } 
   return (
-    <HeaderWrapper language={language} logoColor={logoColor}>
+    <HeaderWrapper $language={language} $logoColor={logoColor}>
       <div className='header-left' onClick={goHome}>
         <ComputerSVG color={logoColor}/>
         {languageCode.TUQIUNING[language]}

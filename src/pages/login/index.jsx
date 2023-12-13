@@ -17,7 +17,6 @@ export default function Login() {
   const navigate = useNavigate();
 
   const submit = (type) => {
-    console.log('20');
     type === 'register' ? submitRegister() : submitLogin();
   }
   // 登录

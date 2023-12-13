@@ -11,10 +11,10 @@ export const HeaderWrapper = styled.header`
     justify-content:space-between;
     padding:10px 40px 10px 20px;
     background-color:transparent;
-    color:${props => props.logoColor};
+    color:${props => props.$logoColor};
     .header-left {
         flex:1;
-        font-family: ${props => props.language === 'zh-CN' ? 'cursive':'douyuFont'};
+        font-family: ${props => props.$language === 'zh-CN' ? 'cursive':'douyuFont'};
         font-size:24px;
         cursor:pointer;
         display:flex;

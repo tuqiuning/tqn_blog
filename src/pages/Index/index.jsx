@@ -7,7 +7,6 @@ import Header from './components/Header';
 export default memo(() => {
   const navigate = useNavigate();
   useEffect(()=>{
-    console.log('object');
     if(!sessionStorage.getItem('activeNav')){
       navigate('/home')
     }

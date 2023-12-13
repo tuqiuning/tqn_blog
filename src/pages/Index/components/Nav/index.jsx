@@ -57,7 +57,6 @@ export default memo(({ activeNavIndex, clickNav }) => {
         }else {
             setNavTextColor('#000000')
         }
-        console.log(path);
         if (!path) {
             dispatch(changeLanguage(language === 'zh-CN' ? 'en-US' : 'zh-CN'))
             return
@@ -93,11 +92,10 @@ export default memo(({ activeNavIndex, clickNav }) => {
     }
     // 切换语言
     const changeLang = () => {
-        console.log(language);
         dispatch(changeLanguage(language === 'zh-CN' ? 'en-US' : 'zh-CN'))
     }
     return (
-        <Container showSearchBox={showSearchBox} navTextColor={navTextColor}>
+        <Container $showSearchBox={showSearchBox} $navTextColor={navTextColor}>
             {/* <div className='searchBox'>
             <input type="text" value={searchValue} onChange={(e)=>{setSearchValue(e.target.value)}}/>
             <SearchOutlined onClick={goSearch}/>

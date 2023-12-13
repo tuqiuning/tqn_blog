@@ -1,6 +1,6 @@
 import styled from "styled-components";
 export const Container =  styled.div`
-    color:${props => props.navTextColor};
+    color:${props => props.$navTextColor};
     position: relative;
     display:flex;
     .rotateContainer {
@@ -45,7 +45,7 @@ export const Container =  styled.div`
             height:36px;
             box-sizing:border-box;
             border-radius:24px;
-            border:1px solid ${props => props.navTextColor};
+            border:1px solid ${props => props.$navTextColor};
             background-color:transparent;
     
             margin-right:10px;
@@ -54,7 +54,7 @@ export const Container =  styled.div`
             padding:0 5px;
             overflow:hidden;
             input {
-                color:${props => props.navTextColor};
+                color:${props => props.$navTextColor};
                 border:none;
                 outline:none;
                 margin-left:5px;
@@ -78,10 +78,10 @@ export const Container =  styled.div`
             transition:scale .5s ease;
         }
         .closeIcon {
-            scale:${props => props.showSearchBox ? 1 : 0};
+            scale:${props => props.$showSearchBox ? 1 : 0};
         }
         .searchIcon {
-            scale:${props => props.showSearchBox ? 0 : 1};
+            scale:${props => props.$showSearchBox ? 0 : 1};
         }
         
     }

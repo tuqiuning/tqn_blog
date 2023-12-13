@@ -12,15 +12,6 @@ import Page4 from './components/page4';
 
 import {HomeContainer} from './style'
 
-// console.log(e);
-//     e.preventDefault(); // 阻止默认的滚动事件  
-//     const delta = e.wheelDeltaY > 0 ? -1 : 1; // 判断滚动的方向  
-//     console.log(delta,currentRef,typeof currentRef);
-//     if(delta === 1 && currentRef.current !== 3){
-//       CarouseRef.current.next();
-//     }else if(delta === -1 && currentRef.current !== 0){
-//       CarouseRef.current.prev();
-//     }
 export default memo(() => {
   const CarouseRef = useRef(null);
   const [current, setCurrent] = useState(0);
@@ -35,9 +26,7 @@ export default memo(() => {
   }
   },[])
   const handleScroll = (e) =>{
-    console.log(current,currentRef.current,'aa');
     const delta = e.wheelDeltaY > 0 ? -1 : 1; // 判断滚动的方向  
-    console.log(delta,currentRef,typeof currentRef);
     if(delta === 1 && currentRef.current === 3) {
       // messageApi.open({
       //   type: 'warning',
@@ -69,7 +58,6 @@ export default memo(() => {
     background: '#364d79',
   };
   const beforeChange = (cur,next) => {
-    console.log(cur,next);
     setCurrent(next)
     currentRef.current = next;
   }
@@ -90,14 +78,12 @@ export default memo(() => {
           <Page2></Page2>
           <Page3></Page3>
           <Page4></Page4>
-       
         </Carousel>
         {
           currentRef.current !== 3 && <div className='arrowDownBox' onClick={nextPanel}>
           <ArrowDownOutlined />
           </div>
         }
-     
       {contextHolder}
     </HomeContainer>
   )
