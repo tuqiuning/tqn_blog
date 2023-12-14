@@ -11,7 +11,8 @@ export default memo(() => {
   return (
     <Page1Wrapper>
       <div className='motto'>
-        <span>业精于勤；荒于嬉；行成于思；毁于随。</span>
+        {/* <span>业精于勤；荒于嬉；行成于思；毁于随。</span> */}
+        <span>吾尝终日而思矣，不如须臾之所学也。</span>
       </div>
       <div className='row'>
         <span>前端开发工程师</span>

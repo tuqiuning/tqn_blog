@@ -8,25 +8,25 @@ background-image:url(${pscmin});
   background-repeat: no-repeat;
     width:100%;
     position:relative;
-    :where(.css-dev-only-do-not-override-nnuwmp).ant-carousel-vertical {
+    .ant-carousel-vertical {
         height:100%;
     }
-    :where(.css-dev-only-do-not-override-nnuwmp).ant-carousel-vertical .slick-dots-right {
+    .ant-carousel-vertical .slick-dots-right {
         right:40px;
     }
-    :where(.css-dev-only-do-not-override-nnuwmp).ant-carousel-vertical .slick-dots li {
+    .ant-carousel-vertical .slick-dots li {
         margin-top:10px;
         button {
-            width:16px;
-            height:16px;
-            border-radius:50%;
+            width:16px !important;
+            height:16px !important;
+            border-radius:50% !important;
         }
     }
-    :where(.css-dev-only-do-not-override-nnuwmp).ant-carousel .slick-dots li.slick-active button {
+    .ant-carousel .slick-dots li.slick-active button {
         background-color:#ffa500;
         opacity:1;
     }
-    :where(.css-dev-only-do-not-override-nnuwmp).ant-carousel .slick-dots li button {
+    .ant-carousel .slick-dots li button {
         opacity:0.3;
         &:hover {
             opacity:1;
@@ -47,6 +47,7 @@ background-image:url(${pscmin});
         font-size:30px;
         transform:translate(-50%);
         color:#fff;
+        cursor:pointer;
         &:hover {
             color:#ffa500;
             border:1px #ffa500 solid;
