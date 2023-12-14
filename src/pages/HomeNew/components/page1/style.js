@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
 export const Page1Wrapper = styled.div`
-background-color:transparent;
+    font-family:serif;
+    background-color:transparent;
     color:#fff;
     width:100%;
     height:100vh;
