@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 export const AboutWrapper = styled.div`
+    box-sizing:border-box;
     width:100%;
     // height:calc(100vh - 60px);
     height:100vh;

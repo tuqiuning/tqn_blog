@@ -9,9 +9,46 @@ export default memo(() => {
       echarts.registerMap('china', China_geojson);
       let maChart = echarts.init(document.getElementById('main'));
       let option = {
-        geo: {
-          map:'china'
-        }
+        tooltip:{
+          aaa:'4444'
+        },
+        series:[
+          {
+            name:'中国地图',
+            type:'map',
+            map:'china',
+            roam:'true',
+            itemStyle: {
+              areaColor:'#0000ff',
+              borderColor:'#000',
+            },
+            emphasis: {
+              itemStyle: {
+                areaColor:'#ff0000',
+              },
+              label: {
+                color:'#fff'
+              }
+            },
+            data:[
+              {
+                name:'重庆市',
+                value:'599'
+              }
+            ],
+            
+          },
+          
+        ],
+        visualMap:[
+          {
+            left:'20%',
+            seriesIndex:[0],
+            inRange:{
+              color:['#ff0000','#00ff00']
+            }
+          }
+        ]
       }
       maChart.setOption(option);
       maChart.on("click",function(params){

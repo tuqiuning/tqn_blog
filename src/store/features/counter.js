@@ -4,7 +4,7 @@ const counterSlice = createSlice({
   name:'counter',
   initialState:{
     counter:'首页',
-    language:'zh-CN',
+    language:sessionStorage.getItem('language') || 'zh-CN',
   },
   reducers:{
     addNumber(state = initialState,action){

@@ -30,7 +30,7 @@ export default memo(({ activeNavIndex, clickNav }) => {
     const [isOpen, setIsOpen] = useState(false); //是否打开菜单弹窗
     const [showSearchBox, setShowSearchBox] = useState(false); //是否显示搜索框
     const [searchValue, setSearchValue] = useState(''); //搜索
-    const [navTextColor,setNavTextColor] = useState('#ffffff'); //导航栏文字颜色
+    const [navTextColor,setNavTextColor] = useState( sessionStorage.getItem('navColor') || '#ffffff'); //导航栏文字颜色
     const navigate = useNavigate();
     useEffect(() => {
         // 监听屏幕宽度
@@ -53,13 +53,11 @@ export default memo(({ activeNavIndex, clickNav }) => {
     // 切换tab
     const changeTab = (path, index) => {
         if(index === 0) {
-            setNavTextColor('#ffffff')
+            setNavTextColor('#ffffff');
+            sessionStorage.setItem('navColor','#ffffff');
         }else {
-            setNavTextColor('#000000')
-        }
-        if (!path) {
-            dispatch(changeLanguage(language === 'zh-CN' ? 'en-US' : 'zh-CN'))
-            return
+            setNavTextColor('#000000');
+            sessionStorage.setItem('navColor','#000000');
         }
         navigate(path)
         clickNav(index);
@@ -92,7 +90,8 @@ export default memo(({ activeNavIndex, clickNav }) => {
     }
     // 切换语言
     const changeLang = () => {
-        dispatch(changeLanguage(language === 'zh-CN' ? 'en-US' : 'zh-CN'))
+        dispatch(changeLanguage(language === 'zh-CN' ? 'en-US' : 'zh-CN'));
+        sessionStorage.setItem('language',language === 'zh-CN' ? 'en-US' : 'zh-CN')
     }
     return (
         <Container $showSearchBox={showSearchBox} $navTextColor={navTextColor}>

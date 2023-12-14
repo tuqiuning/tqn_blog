@@ -11,7 +11,7 @@ import { HeaderWrapper } from './style'
 export default memo(() => {
   const [currentDate, setCurrentDate] = useState(new Date());
   const [activeNavIndex,setActiveNavIndex] = useState(sessionStorage.getItem('activeNav') || 0); //导航栏激活的下标
-  const [logoColor,setLogoColor] = useState('#ffffff');
+  const [logoColor,setLogoColor] = useState( sessionStorage.getItem('navColor') || '#ffffff'); //导航栏字体颜色
   const { language } = useSelector((state) => {
     return state.counter
   })
@@ -24,9 +24,11 @@ export default memo(() => {
   const clickNav = (index) =>{
     setActiveNavIndex(index);
     if(index === 0 ){
-      setLogoColor('#ffffff')
+      setLogoColor('#ffffff');
+      sessionStorage.setItem('navColor','#ffffff');
     }else {
-      setLogoColor('#000000')
+      setLogoColor('#000000');
+      sessionStorage.setItem('navColor','#000000');
     }
   } 
   return (

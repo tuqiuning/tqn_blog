@@ -21,8 +21,9 @@ background-color:transparent;
         font-size:20px;
         .divide {
             margin:0 10px;
-            height:100%;
-            width:1px;
+            height:21px;
+            margin-top:7px;
+            width:2px;
             background-color:#fff;
         }
         .row-left {
