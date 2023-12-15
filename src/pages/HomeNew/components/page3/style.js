@@ -21,8 +21,4 @@ export const Page3Wrapper = styled.div`
         position:relative;
         top:-20px;
     }
-    .ant-timeline-item-tail {
-        margin-left:-1px;
-        border-inline-start:4px solid #fff;
-    }
 `

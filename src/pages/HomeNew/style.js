@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import pscmin from "@/assets/img/psc1.jpeg";
+import pscmin from "@/assets/img/bg1.jpg";
 export const HomeContainer = styled.div`
 height:100%;
 background-image:url(${pscmin});
@@ -35,7 +35,6 @@ background-image:url(${pscmin});
     .arrowDownBox {
         width:60px;
         height:60px;
-        border:1px #fff solid;
         border-radius:50%;
         position:absolute;
         z-index:2;
@@ -46,7 +45,8 @@ background-image:url(${pscmin});
         left:50%;
         font-size:30px;
         transform:translate(-50%);
-        color:#fff;
+        color:#fccb71 ;
+        border:1px #fccb71  solid;
         cursor:pointer;
         &:hover {
             color:#ffa500;

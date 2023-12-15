@@ -1,35 +1,35 @@
 import React, { memo } from 'react';
 import { ClockCircleOutlined } from '@ant-design/icons';
-import { Timeline } from 'antd';
+import { ConfigProvider,Timeline } from 'antd';
 import { Page3Wrapper } from './style';
 import ChinessIcon from '@/assets/icon/zhSvg.jsx';
 
 export default memo(() => {
   const items = [
     {
-      label:<div className='company1'>
-      <h4>尚优科技有限公司</h4>
-      <h4>2022/09-2023/10</h4>
-    </div>,
+      label: <div className='company1'>
+        <h4>尚优科技有限公司</h4>
+        <h4>2022/09-2023/10</h4>
+      </div>,
       children: <div className='workContent'>
         <div>
-        负责开发和维护公司业务系统核心模块，参与前端技术选型
+          负责开发和维护公司业务系统核心模块，参与前端技术选型
         </div>
         <div>
-        负责开发和维护公司业务系统核心模块，参与前端技术选型
+          负责开发和维护公司业务系统核心模块，参与前端技术选型
         </div><div>
-        负责开发和维护公司业务系统核心模块，参与前端技术选型
+          负责开发和维护公司业务系统核心模块，参与前端技术选型
         </div><div>
-        负责开发和维护公司业务系统核心模块，参与前端技术选型
+          负责开发和维护公司业务系统核心模块，参与前端技术选型
         </div>
       </div>
     },
     {
-      dot:<ChinessIcon />,
-      label:<div className='company1'>
-      <h4>尚优科技有限公司</h4>
-      <h4>2022/09-2023/10</h4>
-    </div>,
+      dot: <ChinessIcon />,
+      label: <div className='company1'>
+        <h4>尚优科技有限公司</h4>
+        <h4>2022/09-2023/10</h4>
+      </div>,
       children: <div className='workContent'>
         <div>根据需求实现页面交互效果，配合后端完成PC端及小程序的业务开发
         </div>
@@ -42,10 +42,22 @@ export default memo(() => {
   ]
   return (
     <Page3Wrapper>
+    <ConfigProvider
+    // 修改Timeline的轴线样式
+      theme={{
+        components:{
+          Timeline:{
+            tailColor:'#ffa500',
+            tailWidth:5
+          }
+        }
+      }}
+    >
         <Timeline
-        mode='left'
-        items={items}
-      />
+          mode='left'
+          items={items}
+        />
+    </ConfigProvider>
     </Page3Wrapper>
   )
 })

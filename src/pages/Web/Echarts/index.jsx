@@ -54,9 +54,6 @@ export default memo(() => {
       maChart.on("click",function(params){
         console.log(params)
         setRegionName(params.name)
-        axios.get(`http://t.weather.itboy.net/api/weather/city/100100`).then(res=>{
-          console.log(res);
-        })
       })
     },[])
     const [regionName,setRegionName] = useState('')

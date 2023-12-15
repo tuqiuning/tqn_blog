@@ -1,35 +1,40 @@
 import React, { memo } from 'react';
 import { Divider } from 'antd';
+import { useSelector } from 'react-redux';
 import EduSVG from '@/assets/icon/EduSVG';
 import SchoolSVG from '@/assets/icon/SchoolSVG';
 import BirthSVG from '@/assets/icon/BirthSVG';
 import AddressSVG from '@/assets/icon/addressSVG';
 import { GithubOutlined, MailOutlined, HomeOutlined, PhoneOutlined } from '@ant-design/icons';
 import { Page1Wrapper } from './style';
+import languageCode from '@/utils/page1.js';
 
 export default memo(() => {
+  const { language } = useSelector((state) => {
+    return state.counter
+  })
   return (
-    <Page1Wrapper>
+    <Page1Wrapper $language={language}>
       <div className='motto'>
-        {/* <span>业精于勤；荒于嬉；行成于思；毁于随。</span> */}
-        <span>吾尝终日而思矣，不如须臾之所学也。</span>
+        <span>{languageCode.MOTTO[language]}</span>
+        {/* <span>吾尝终日而思矣，不如须臾之所学也。</span> */}
       </div>
       <div className='row'>
-        <span>前端开发工程师</span>
+        <span>{languageCode.WEBDEVELOPER[language]}</span>
         <div className='divide'></div>
-        <span>涂邱宁</span>
+        <span>{languageCode.TUQIUNING[language]}</span>
       </div>
       <div className='row'>
         <BirthSVG style={{paddingTop:'4px',marginRight:'5px'}}/>
         <span className='row-left'>1996.11</span>
         <AddressSVG style={{paddingTop:'2px',marginRight:'2px'}}/>
-        <span >重庆</span>
+        <span >{languageCode.CHONGQING[language]}</span>
       </div>
       <div className='row'>
         <SchoolSVG style={{paddingTop:'2px',marginRight:'5px'}}/>
-        <span className='row-left'>重庆工程学院</span>
+        <span className='row-left'>{languageCode.CHONGQINGGONGCHENG[language]}</span>
         <EduSVG style={{marginRight:'2px'}}/>
-        <span >本科</span>
+        <span>{languageCode.BENKE[language]}</span>
       </div>
       <div className='row'>
         <MailOutlined style={{ fontSize: "20px", marginRight: '5px', paddingTop: '4px' }} />

@@ -1,7 +1,8 @@
 import styled from 'styled-components';
+import '@/assets/style/font.less';
 
 export const Page1Wrapper = styled.div`
-    font-family:serif;
+    font-family: ${props => props.$language === 'zh-CN' ? 'serif':'douyuFont'};
     background-color:transparent;
     color:#fff;
     width:100%;
@@ -13,7 +14,7 @@ export const Page1Wrapper = styled.div`
     .motto {
         border-bottom:1px solid #fff;
         padding:0 30px 10px 40px;
-        font-size:28px;
+        font-size:26px;
     }
     .row {
         display:flex;
@@ -23,7 +24,7 @@ export const Page1Wrapper = styled.div`
         .divide {
             margin:0 10px;
             height:21px;
-            margin-top:7px;
+            margin-top:5px;
             width:2px;
             background-color:#fff;
         }
