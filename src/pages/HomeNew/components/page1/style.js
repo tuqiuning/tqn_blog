@@ -2,7 +2,8 @@ import styled from 'styled-components';
 import '@/assets/style/font.less';
 
 export const Page1Wrapper = styled.div`
-    font-family: ${props => props.$language === 'zh-CN' ? 'serif':'douyuFont'};
+    // font-family: ${props => props.$language === 'zh-CN' ? 'serif':'douyuFont'};
+    font-family:Poppins,sans-serif;
     background-color:transparent;
     color:#fff;
     width:100%;
