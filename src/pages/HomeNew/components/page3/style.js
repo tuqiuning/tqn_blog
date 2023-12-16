@@ -31,26 +31,41 @@ export const Page3Wrapper = styled.div`
         font-size:24px;
         font-family:sans-serif;
     }
-    .logo {
+    .logoBox {
         width:56px;
         height:56px;
         border-radius:50%;
         border:5px solid #fff;
         background-color:#008074;
+        cursor:pointer;
+    }
+    .logo {
+        width:100%;
+        height:100%;
         background-position:center;
         background-repeat:no-repeat;
-        cursor:pointer;
+        background-size:80%;
+        animation:logo 2s ease infinite;
+        
     }
     .logo1 {
         background-image:url(${shangyouLogo});
-        
-        background-size:80%;
-        
     }
     .logo2 {
         background-image:url(${zhixing});
-        background-size:contain;
+        animation-delay:.5s;
     }
+    @keyframes logo {
+        0% {
+            opacity:1;
+        }
+        50% {
+            opacity:0;
+        }
+        100% {
+            opacity:1;
+        }
+     }
     .workContent {
         color:#fff;
         width:600px;

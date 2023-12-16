@@ -13,7 +13,11 @@ export default memo(() => {
   const items = [
     {
       dot: 
-          <div className='logo logo1' onClick={goShangyou}></div>,
+          <div className='logoBox' onClick={goShangyou}>
+            <div className='logo logo1'>
+
+            </div>
+          </div>,
       label: <div className='company'>
           <h4>尚优科技有限公司</h4>
           <span className='duration'>2022/09 - 2023/10</span>
@@ -32,7 +36,11 @@ export default memo(() => {
       </div>
     },
     {
-      dot: <div className='logo logo2'></div>,
+      dot: <div className='logoBox' onClick={goShangyou}>
+      <div className='logo logo2'>
+
+      </div>
+    </div>,
       label: <div className='company'>
           <h4>尚优科技有限公司</h4>
           <span className='duration'>2022/09 - 2023/10</span>
