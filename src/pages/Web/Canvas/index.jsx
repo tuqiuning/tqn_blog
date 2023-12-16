@@ -1,18 +1,42 @@
-import React, { memo, useEffect } from 'react';
+import React, { memo, useEffect, useState } from 'react';
 import { CanvasWrapper } from './style';
 import '@/assets/style/font.less';
 
 export default memo(() => {
   let canvas = null;
   let ctx = null;
+  let time = null;
+  let hours = null;
+  let minutes = null;
+  let seconds = null;
+  let milliseconds = null;
   useEffect(() => {
     canvas = document.getElementById('canvas');
     ctx = canvas.getContext('2d');
     requestAnimationFrame(draw)
   }, [])
-  const draw = () => {
 
-    // 绘制圆盘
+  const draw = () => {
+    time = new Date();
+    hours = time.getHours();
+    minutes = time.getMinutes();
+    seconds = time.getSeconds();
+    milliseconds = time.getMilliseconds();
+    DrawRing();
+    DrawHoursScale();
+    DrawMinuteScale();
+    DrawNumbers();
+    DrawHour();
+    DrawMinutes();
+    DrawSecond();
+    DrawCenter();
+    DrawLogo();
+
+    requestAnimationFrame(draw)
+  }
+
+  // 绘制圆盘
+  const DrawRing = () => {
     ctx.clearRect(0, 0, 500, 500);
     ctx.save();
     ctx.fillStyle = '#fff';
@@ -21,53 +45,40 @@ export default memo(() => {
     ctx.arc(0, 0, 200, 0, Math.PI * 2, false);
     ctx.fill()
     ctx.restore();
-
-    // 绘制圆环
+  }
+  // 绘制时针刻度
+  const DrawHoursScale = () => {
     ctx.save();
-    ctx.strokeStyle = '#000';
-    ctx.beginPath();
     ctx.translate(250, 250);
-    ctx.arc(0, 0, 200, 0, Math.PI * 2, false);
-    ctx.lineWidth = 2;
-    ctx.stroke()
-    ctx.restore();
-
-    // 绘制时针刻度
+    ctx.stroke();
     for (let i = 0; i < 12; i++) {
-      ctx.save();
+      ctx.rotate(Math.PI / 6);
+      ctx.lineWidth = 5;
       ctx.beginPath();
-      ctx.translate(250, 250);
-
-      let x1 = Math.cos(Math.PI / 6 * i) * 180;
-      let y1 = Math.sin(Math.PI / 6 * i) * 180;
-      let x2 = Math.cos(Math.PI / 6 * i) * 200;
-      let y2 = Math.sin(Math.PI / 6 * i) * 200;
-      ctx.moveTo(x1, y1);
-      ctx.lineTo(x2, y2);
-      ctx.lineWidth = 3;
-      ctx.closePath();
+      ctx.moveTo(0, 185);
+      ctx.lineTo(0, 200);
       ctx.stroke();
-      ctx.restore();
     }
+    ctx.restore();
+  }
 
-    // 绘制分针刻度
+  // 绘制分针刻度
+  const DrawMinuteScale = () => {
+    ctx.save();
+    ctx.translate(250, 250);
+    ctx.stroke();
     for (let i = 0; i < 60; i++) {
-      ctx.save();
+      ctx.rotate(Math.PI / 30);
+      ctx.lineWidth = 2;
       ctx.beginPath();
-      ctx.translate(250, 250);
-
-      let x1 = Math.cos(Math.PI / 30 * i) * 190;
-      let y1 = Math.sin(Math.PI / 30 * i) * 190;
-      let x2 = Math.cos(Math.PI / 30 * i) * 200;
-      let y2 = Math.sin(Math.PI / 30 * i) * 200;
-      ctx.moveTo(x1, y1);
-      ctx.lineTo(x2, y2);
-      ctx.closePath();
+      ctx.moveTo(0, 190);
+      ctx.lineTo(0, 200);
       ctx.stroke();
-      ctx.restore();
     }
-
-    // 绘制数字
+    ctx.restore();
+  }
+  // 绘制数字
+  const DrawNumbers = () => {
     ctx.save();
     ctx.translate(250, 250);
     ctx.font = "30px fangsong";
@@ -81,13 +92,11 @@ export default memo(() => {
       ctx.fillText(numbers[i], x, y)
     }
     ctx.restore();
+  }
 
-    // 绘制时针
-    let time = new Date();
-    let hours = time.getHours();
-    let minutes = time.getMinutes();
-    let seconds = time.getSeconds();
-    let milliseconds = time.getMilliseconds();
+  // 绘制时针
+  const DrawHour = () => {
+
     ctx.save();
     ctx.translate(250, 250);
     ctx.rotate(
@@ -103,8 +112,10 @@ export default memo(() => {
     ctx.stroke();
     ctx.closePath();
     ctx.restore();
+  }
 
-    // 绘制分针
+  // 绘制分针
+  const DrawMinutes = () => {
     ctx.save();
     ctx.translate(250, 250);
 
@@ -121,11 +132,12 @@ export default memo(() => {
     ctx.closePath();
 
     ctx.restore();
+  }
 
-    // 绘制秒针
+  // 绘制秒针
+  const DrawSecond = () => {
     ctx.save();
     ctx.translate(250, 250);
-
     ctx.rotate(
       Math.PI * 2 / 60 * seconds +
       Math.PI * 2 / 60 * milliseconds / 1000
@@ -140,35 +152,37 @@ export default memo(() => {
     ctx.stroke();
     ctx.closePath();
     ctx.restore();
+  }
 
-    // 绘制中心点
+  // 绘制中心点
+  const DrawCenter = () => {
     ctx.save();
     ctx.translate(250, 250);
     ctx.beginPath();
     ctx.fillStyle = "#cf0000";
     ctx.arc(0, 0, 8, 0, Math.PI * 2);
     ctx.fill();
-    ctx.closePath();
     ctx.beginPath();
     ctx.fillStyle = "white";
     ctx.arc(0, 0, 4, 0, Math.PI * 2);
     ctx.fill();
     ctx.closePath();
     ctx.restore();
+  }
 
-    // 绘制logo
+  // 绘制logo
+  const DrawLogo = () => {
     ctx.save();
-    ctx.translate(250,250);
+    ctx.translate(250, 250);
     ctx.font = "30px none";
     ctx.textBaseline = "middle";
     ctx.textAlign = "center";
     ctx.beginPath();
-    ctx.fillText('Canvas',0,-100)
+    ctx.fillText('Canvas', 0, -100)
     ctx.closePath();
     ctx.restore();
-
-    requestAnimationFrame(draw)
   }
+
   return (
     <CanvasWrapper>
       <canvas width={500} height={500} id='canvas'>
