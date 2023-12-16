@@ -47,8 +47,6 @@ export const Container =  styled.div`
             border-radius:24px;
             border:1px solid ${props => props.$navTextColor};
             background-color:transparent;
-    
-            margin-right:10px;
             display:flex;
             align-items:center;
             padding:0 5px;
