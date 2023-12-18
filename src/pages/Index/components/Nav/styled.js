@@ -1,6 +1,7 @@
 import styled from "styled-components";
 export const Container =  styled.div`
-    color:${props => props.$navTextColor};
+    color:${props => {console.log(props.$navTextColor);
+      return  props.$navTextColor}};
     position: relative;
     display:flex;
     .rotateContainer {

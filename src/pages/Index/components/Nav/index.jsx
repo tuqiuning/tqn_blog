@@ -10,9 +10,10 @@ import store from '@/store';
 import { changeLanguage,changeActiveNavIndex } from '@/store/features/system';
 import EnglishIcon from '@/assets/icon/enSvg.jsx';
 import ChinessIcon from '@/assets/icon/zhSvg.jsx';
+import { changeNavColor } from '../../../../store/features/system';
 
-export default memo(({ activeNavIndex, clickNav }) => {
-    const { language } = useSelector((state) => {
+export default memo(({ activeNavIndex }) => {
+    const { language,navColor } = useSelector((state) => {
         return state.system
     })
     const dispatch = useDispatch();
@@ -30,7 +31,6 @@ export default memo(({ activeNavIndex, clickNav }) => {
     const [isOpen, setIsOpen] = useState(false); //是否打开菜单弹窗
     const [showSearchBox, setShowSearchBox] = useState(false); //是否显示搜索框
     const [searchValue, setSearchValue] = useState(''); //搜索
-    const [navTextColor,setNavTextColor] = useState( sessionStorage.getItem('navColor') || '#ffffff'); //导航栏文字颜色
     const navigate = useNavigate();
     useEffect(() => {
         // 监听屏幕宽度
@@ -52,15 +52,15 @@ export default memo(({ activeNavIndex, clickNav }) => {
     }
     // 切换tab
     const changeTab = (path, index) => {
+        console.log(index,typeof index);
         if(index === 0) {
-            setNavTextColor('#ffffff');
+            dispatch(changeNavColor('#ffffff'))
             sessionStorage.setItem('navColor','#ffffff');
         }else {
-            setNavTextColor('#000000');
+            dispatch(changeNavColor('#000000'))
             sessionStorage.setItem('navColor','#000000');
         }
         navigate(path)
-        clickNav(index);
         // 将当前激活的Nav保存到sessionStroage,解决刷新后Nav的激活回到首页的问题
         sessionStorage.setItem('activeNavIndex', index);
         dispatch(changeActiveNavIndex(index))
@@ -95,7 +95,7 @@ export default memo(({ activeNavIndex, clickNav }) => {
         sessionStorage.setItem('language',language === 'zh-CN' ? 'en-US' : 'zh-CN')
     }
     return (
-        <Container $showSearchBox={showSearchBox} $navTextColor={navTextColor}>
+        <Container $showSearchBox={showSearchBox} $navTextColor={navColor}>
             {/* <div className='searchBox'>
             <input type="text" value={searchValue} onChange={(e)=>{setSearchValue(e.target.value)}}/>
             <SearchOutlined onClick={goSearch}/>
@@ -118,8 +118,8 @@ export default memo(({ activeNavIndex, clickNav }) => {
                                 <li>
                                     {
                                         language === 'zh-CN' ? 
-                                        <div onClick={()=>changeLang()}><ChinessIcon color={navTextColor}/> </div>:
-                                        <div onClick={()=>changeLang()}><EnglishIcon color={navTextColor}/></div>
+                                        <div onClick={()=>changeLang()}><ChinessIcon color={navColor}/> </div>:
+                                        <div onClick={()=>changeLang()}><EnglishIcon color={navColor}/></div>
                                     }
                                 </li>
                             </ul>
