@@ -11,7 +11,7 @@ import languageCode from '@/utils/page1.js';
 
 export default memo(() => {
   const { language } = useSelector((state) => {
-    return state.counter
+    return state.system
   })
   return (
     <Page1Wrapper $language={language}>

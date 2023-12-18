@@ -7,17 +7,17 @@ import classNames from 'classnames';
 import { Container } from './styled';
 import languageCode from '@/utils/language';
 import store from '@/store';
-import { changeLanguage,changeActiveNavIndex } from '@/store/features/counter';
+import { changeLanguage,changeActiveNavIndex } from '@/store/features/system';
 import EnglishIcon from '@/assets/icon/enSvg.jsx';
 import ChinessIcon from '@/assets/icon/zhSvg.jsx';
 
 export default memo(({ activeNavIndex, clickNav }) => {
     const { language } = useSelector((state) => {
-        return state.counter
+        return state.system
     })
     const dispatch = useDispatch();
 
-    store.getState().counter.language;
+    store.getState().system.language;
     const tabs = [
         languageCode.HOME,
         languageCode.FORME,

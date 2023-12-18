@@ -9,7 +9,7 @@ import { AboutWrapper } from './style'
 
 export default memo(() => {
   const {language} = useSelector((state)=>{
-    return state.counter
+    return state.system
   })
   const [messageApi,contextHolder] = message.useMessage(); //提示语
   const copyPhone = () => {

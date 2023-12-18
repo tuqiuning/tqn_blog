@@ -6,13 +6,13 @@ import '@/assets/style/font.less';
 import languageCode from '@/utils/language';
 import dayjs from 'dayjs';
 import ComputerSVG from '@/assets/icon/computerSVG.jsx';
-import { changeActiveNavIndex } from '@/store/features/counter'
+import { changeActiveNavIndex } from '@/store/features/system'
 import { HeaderWrapper } from './style'
 
 export default memo(() => {
   const dispatch = useDispatch();
   const { language,activeNavIndex } = useSelector((state) => {
-    return state.counter
+    return state.system
   })
   const [currentDate, setCurrentDate] = useState(new Date());
   const [logoColor,setLogoColor] = useState( sessionStorage.getItem('navColor') || '#ffffff'); //导航栏字体颜色

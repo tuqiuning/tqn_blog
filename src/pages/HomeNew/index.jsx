@@ -47,7 +47,7 @@ export default memo(() => {
     }
     }
   const {language} = useSelector((state)=>{
-    return state.counter
+    return state.system
   })
   
   const contentStyle = {

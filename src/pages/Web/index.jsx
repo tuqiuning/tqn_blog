@@ -9,7 +9,7 @@ import languageCode from '@/utils/frontend';
 
 export default memo(() => {
   const { language } = useSelector(state => {
-    return state.counter;
+    return state.system;
   });
   const [activeIndex,setActiveIndex] = useState(0);
   return (

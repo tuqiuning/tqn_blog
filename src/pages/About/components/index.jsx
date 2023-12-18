@@ -18,7 +18,7 @@ export default memo(({ type }) => {
     GITHUB: 'https://github.com/tuqiuning'
   })
   const { language } = useSelector((state) => {
-    return state.counter
+    return state.system
   })
   const handle = () => {
     if (type === 'GITHUB') {

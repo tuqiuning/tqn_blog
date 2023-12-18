@@ -10,7 +10,7 @@ import {HomeContainer} from './style'
 
 export default memo(() => {
   const {language} = useSelector((state)=>{
-    return state.counter
+    return state.system
   })
   const [current, setCurrent] = useState(0);
   const [showSkill,setShowSkill] = useState(true)

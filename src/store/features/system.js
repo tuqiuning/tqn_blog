@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const counterSlice = createSlice({
-  name:'counter',
+const systemSlice = createSlice({
+  name:'system',
   initialState:{
     language:sessionStorage.getItem('language') || 'zh-CN', //语言
     activeNavIndex:sessionStorage.getItem('activeNavIndex') || 0, //主页顶部导航栏的下标
@@ -16,6 +16,6 @@ const counterSlice = createSlice({
   }
 })
 
-export const { changeLanguage,changeActiveNavIndex } = counterSlice.actions;
+export const { changeLanguage,changeActiveNavIndex } = systemSlice.actions;
 
-export default counterSlice.reducer;
+export default systemSlice.reducer;
