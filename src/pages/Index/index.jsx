@@ -7,9 +7,10 @@ import Header from './components/Header';
 export default memo(() => {
   const navigate = useNavigate();
   useEffect(()=>{
-    if(!sessionStorage.getItem('activeNav')){
+    if(!sessionStorage.getItem('activeNavIndex')){
       navigate('/home')
     }
+    console.log(sessionStorage.getItem('activeNavIndex'));
   },[])
   return (
     <IndexContainer>

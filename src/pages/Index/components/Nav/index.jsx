@@ -7,7 +7,7 @@ import classNames from 'classnames';
 import { Container } from './styled';
 import languageCode from '@/utils/language';
 import store from '@/store';
-import { changeLanguage } from '@/store/features/counter';
+import { changeLanguage,changeActiveNavIndex } from '@/store/features/counter';
 import EnglishIcon from '@/assets/icon/enSvg.jsx';
 import ChinessIcon from '@/assets/icon/zhSvg.jsx';
 
@@ -62,7 +62,8 @@ export default memo(({ activeNavIndex, clickNav }) => {
         navigate(path)
         clickNav(index);
         // 将当前激活的Nav保存到sessionStroage,解决刷新后Nav的激活回到首页的问题
-        sessionStorage.setItem('activeNav', index)
+        sessionStorage.setItem('activeNavIndex', index);
+        dispatch(changeActiveNavIndex(index))
     }
     const goSearch = () => {
         console.log(searchValue);

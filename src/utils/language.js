@@ -7,7 +7,7 @@ const HOME = {
         "zh-CN": '首页',
         "en-US": 'Home'
     },
-    path:'/homeNew'
+    path:'/home'
 }
 const FORME = {
     name:{

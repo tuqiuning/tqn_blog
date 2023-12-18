@@ -3,22 +3,19 @@ import { createSlice } from "@reduxjs/toolkit";
 const counterSlice = createSlice({
   name:'counter',
   initialState:{
-    counter:'首页',
-    language:sessionStorage.getItem('language') || 'zh-CN',
+    language:sessionStorage.getItem('language') || 'zh-CN', //语言
+    activeNavIndex:sessionStorage.getItem('activeNavIndex') || 0, //主页顶部导航栏的下标
   },
   reducers:{
-    addNumber(state = initialState,action){
-      state.counter = state.counter + action.payload
-    },
-    subNumber(state,action){
-
-    },
     changeLanguage(state,action){
       state.language = action.payload
+    },
+    changeActiveNavIndex(state,action){
+      state.activeNavIndex = action.payload
     }
   }
 })
 
-export const { addNumber,subNumber,changeLanguage } = counterSlice.actions;
+export const { changeLanguage,changeActiveNavIndex } = counterSlice.actions;
 
 export default counterSlice.reducer;
