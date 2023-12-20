@@ -52,7 +52,7 @@ export default memo(({ type }) => {
   }
   // 复制文本
   const copyText = () => {
-    // 如何是微信，则是保存二维码
+    // 如果是微信，则是下载二维码
     if (type === 'WECHAT') {
       const link = document.createElement('a')
       link.href = qrcode;

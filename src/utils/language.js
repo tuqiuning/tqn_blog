@@ -96,8 +96,8 @@ const COPYSUCCESS = {
     "en-US": 'Copy successfully'
 }
 const SAVE = {
-    "zh-CN": '保存二维码',
-    "en-US": 'Save QRCode'
+    "zh-CN": '下载二维码',
+    "en-US": 'Download QRCode'
 }
 const OPENLINK = {
     "zh-CN": '打开链接',
