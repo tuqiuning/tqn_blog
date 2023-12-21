@@ -1,8 +1,6 @@
 import React, { memo } from 'react';
-import { ClockCircleOutlined } from '@ant-design/icons';
-import { ConfigProvider, Timeline, Image } from 'antd';
+import { ConfigProvider, Timeline } from 'antd';
 import { Page3Wrapper } from './style';
-import ChinessIcon from '@/assets/icon/zhSvg.jsx';
 
 
 export default memo(() => {
