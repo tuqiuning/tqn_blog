@@ -2,9 +2,9 @@ const MOTTO = {
     "zh-CN":'业精于勤；荒于嬉；行成于思；毁于随。',
     "en-US":'Industry is good at diligence, waste in play; action in thinking, destroyed in following.'
 }
-const WEBDEVELOPER = {
+const FRONTENDDEVELOPER = {
     "zh-CN":"前端开发工程师",
-    "en-US":"Frontend Developer"
+    "en-US":"Frontend developer"
 }
 const TUQIUNING = {
     "zh-CN": '涂邱宁',
@@ -24,7 +24,7 @@ const BENKE = {
 }
 export default {
     MOTTO,
-    WEBDEVELOPER,
+    FRONTENDDEVELOPER,
     TUQIUNING,
     CHONGQING,
     CHONGQINGGONGCHENG,

@@ -12,16 +12,20 @@ export default memo((props) => {
       />
       </div>
       <div className='right'>
-        <div><span>项目名称：</span>{props.name}</div>
-        <div><span>技术栈：</span>{props.skill}</div>
-        <div><span>项目描述：</span>{props.overview}</div>
-        <div>
-          <span>
-          我参与的：
-          </span>
-          {
+        <div className='title'>
+           {props.name}
+        </div>
+        <ul className='participation'>
+            {
             props.content && props.content.map(item =>{
-              return <div key={item}>{item}</div>
+              return <li key={item}>{item}</li>
+            })
+            }
+        </ul>
+        <div className='skills'>
+          {
+            props.skills.map(item =>{
+              return <span key={item} className='skill'>{item}</span>
             })
           }
         </div>

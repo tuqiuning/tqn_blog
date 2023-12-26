@@ -30,7 +30,7 @@ const FRONT = {
         "zh-CN": '前端',
         "en-US": 'Frontend'
     },
-    path:'/web'
+    path:'/frontend'
     
 }
 const END = {

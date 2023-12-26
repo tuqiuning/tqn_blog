@@ -14,8 +14,9 @@ export const Page1Wrapper = styled.div`
     justify-content:center;
     .motto {
         border-bottom:1px solid #fff;
-        padding:0 30px 10px 40px;
+        padding:0 20px 10px 30px;
         font-size:26px;
+        font-weight:bold;
     }
     .row {
         display:flex;

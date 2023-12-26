@@ -1,11 +1,10 @@
 import React, { memo } from 'react';
-import { Divider } from 'antd';
 import { useSelector } from 'react-redux';
 import EduSVG from '@/assets/icon/EduSVG';
 import SchoolSVG from '@/assets/icon/SchoolSVG';
 import BirthSVG from '@/assets/icon/BirthSVG';
 import AddressSVG from '@/assets/icon/addressSVG';
-import { GithubOutlined, MailOutlined, HomeOutlined, PhoneOutlined } from '@ant-design/icons';
+import { MailOutlined, PhoneOutlined } from '@ant-design/icons';
 import { Page1Wrapper } from './style';
 import languageCode from '@/utils/page1.js';
 
@@ -20,7 +19,7 @@ export default memo(() => {
         {/* <span>吾尝终日而思矣，不如须臾之所学也。</span> */}
       </div>
       <div className='row'>
-        <span>{languageCode.WEBDEVELOPER[language]}</span>
+        <span>{languageCode.FRONTENDDEVELOPER[language]}</span>
         <div className='divide'></div>
         <span>{languageCode.TUQIUNING[language]}</span>
       </div>

@@ -41,7 +41,7 @@ background-image:url(${pscmin});
         display:flex;
         justify-content:center;
         align-items:center;
-        bottom:20px;
+        bottom:40px;
         left:50%;
         font-size:30px;
         transform:translate(-50%);
@@ -51,6 +51,25 @@ background-image:url(${pscmin});
         &:hover {
             color:#ffa500;
             border:1px #ffa500 solid;
+        }
+    }
+    .footer {
+        position:absolute;
+        width:100%;
+        bottom:10px;
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
+        a {
+            margin-right:5px;
+            font-size:12px;
+             /* 去除默认的下划线 */
+            text-decoration: none;
+            outline: none;	/* 去除旧版浏览器的点击后的外虚线框 */
+            color: #ddd;
+            &:hover {
+                text-decoration: underline;
+            }
         }
     }
       

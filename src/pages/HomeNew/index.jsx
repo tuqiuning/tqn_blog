@@ -84,6 +84,11 @@ export default memo(() => {
           <ArrowDownOutlined />
           </div>
         }
+        <div className='footer'>
+        <img src={icon} alt="" width={15} height={15}/>
+      <a href="https://beian.mps.gov.cn/#/query/webSearch?code=50011302222072\" rel="noreferrer" target="_blank">渝公网安备50011302222072</a>
+      <a href="https://beian.miit.gov.cn/" target="_blank">渝ICP备2023016344号-1</a>
+      </div>
       {contextHolder}
     </HomeContainer>
   )

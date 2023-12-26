@@ -6,15 +6,27 @@ export const Page4DetailWrapper = styled.div`
     display:flex;
     align-items:center;
     position:absolute;
-    // border:1px solid red;
     top:0;
     left:0;
-    // width:100%;
     }
     .left {
-        width:40%;
+        width:30%;
     }
     .right {
         flex:1;
+        .title {
+            font-size:24px;
+            font-weight:bold;
+        }
+        .skills {
+            margin-top:10px;
+            .skill {
+                // display:inline-block;
+                margin-right:10px;
+                font-size:18px;
+                // font-weight:bold;
+                
+            }
+        }
     }
 `

@@ -20,7 +20,7 @@ export const AboutWrapper = styled.div`
         justify-content:center;
         align-items:center;
         font-size:28px;
-        box-shadow:0px 0px 10px #d3d3d3;
+        box-shadow:rgba(66, 65, 65, 0.13) 0px 2px 8px 0px;
     }
     .copyBtn {
         width:100%;
@@ -40,7 +40,7 @@ export const AboutWrapper = styled.div`
         transform:translate(-50%,-50%) scale(0,0);
         transition:all 0.5s ease;
         transform-origin:center center;
-        box-shadow:0px 0px 10px #d3d3d3;
+        box-shadow:rgba(66, 65, 65, 0.13) 0px 2px 8px 0px;
     }
     .aboutItem:hover > .scaleBox {
         transform:translate(-50%,-50%) scale(1,1);

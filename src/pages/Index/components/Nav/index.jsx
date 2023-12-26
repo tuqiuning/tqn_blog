@@ -3,7 +3,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { Drawer } from 'antd'
 import { MenuOutlined, CloseOutlined, SearchOutlined } from '@ant-design/icons';
-import classNames from 'classnames';
 import { Container } from './styled';
 import languageCode from '@/utils/language';
 import store from '@/store';
@@ -105,7 +104,7 @@ export default memo(({ activeNavIndex }) => {
                 excessPhone ?
                     <div className='rotateContainer'>
                         <div className='rotateBox'>
-                            <ul className='tabs' id='tabs'>
+                            <ul className='tabs'>
                                 {tabs.map((item, index) => {
                                     return <li
                                         key={index}

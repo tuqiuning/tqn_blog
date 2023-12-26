@@ -3,7 +3,7 @@ import Index from "@/pages/Index/index.jsx";
 import Home from "@/pages/Home";
 import HomeNew from "@/pages/HomeNew";
 import About from "@/pages/About";
-import Web from '@/pages/Web';
+import Frontend from '@/pages/Frontend';
 import NotFound from "@/pages/NotFound";
 
 const router = [
@@ -25,8 +25,8 @@ const router = [
                 auth:false
             },
             {
-                path:'web',
-                element:<Web />,
+                path:'frontend',
+                element:<Frontend />,
                 auth:false
             },
             {
