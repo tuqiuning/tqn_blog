@@ -8,29 +8,26 @@ export default memo(() => {
   const goShangyou = () => {
     window.open('http://www.sunutech.net/')
   }
+  const dutys = [
+  '负责开发和维护公司业务系统核心模块，参与前端技术选型',
+  '负责开发和维护公司业务系统核心模块，参与前端技术选型',
+  '负责开发和维护公司业务系统核心模块，参与前端技术选型'];
   const items = [
     {
       dot: 
           <div className='logoBox' onClick={goShangyou}>
-            <div className='logo logo1'>
-
-            </div>
+            <div className='logo logo1'></div>
           </div>,
       label: <div className='company'>
           <h4>尚优科技有限公司</h4>
           <span className='duration'>2022/09 - 2023/10</span>
       </div>,
       children: <div className='workContent'>
-        <div>
-          负责开发和维护公司业务系统核心模块，参与前端技术选型
-        </div>
-        <div>
-          负责开发和维护公司业务系统核心模块，参与前端技术选型
-        </div><div>
-          负责开发和维护公司业务系统核心模块，参与前端技术选型
-        </div><div>
-          负责开发和维护公司业务系统核心模块，参与前端技术选型
-        </div>
+        {
+          dutys.map ((duty, index) => {
+            return <div key={index}>{duty}</div>
+          })
+        }
       </div>
     },
     {
@@ -44,16 +41,11 @@ export default memo(() => {
           <span className='duration'>2022/09 - 2023/10</span>
       </div>,
       children: <div className='workContent'>
-        <div>
-          负责开发和维护公司业务系统核心模块，参与前端技术选型
-        </div>
-        <div>
-          负责开发和维护公司业务系统核心模块，参与前端技术选型
-        </div><div>
-          负责开发和维护公司业务系统核心模块，参与前端技术选型
-        </div><div>
-          负责开发和维护公司业务系统核心模块，参与前端技术选型
-        </div>
+        {
+          dutys.map ((duty, index) => {
+            return <div key={index}>{duty}</div>
+          })
+        }
       </div>
     }
   ]

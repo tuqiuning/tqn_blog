@@ -26,17 +26,17 @@ export default memo(({ activeNavIndex }) => {
         // languageCode.END,
         // languageCode.LANG,
     ]
-    const [excessPhone, setExcessPhone] = useState(innerWidth >= 750); //是否大于750
+    const [excessPhone, setExcessPhone] = useState(true); //是否大于750
     const [isOpen, setIsOpen] = useState(false); //是否打开菜单弹窗
     const [showSearchBox, setShowSearchBox] = useState(false); //是否显示搜索框
     const [searchValue, setSearchValue] = useState(''); //搜索
     const navigate = useNavigate();
     useEffect(() => {
         // 监听屏幕宽度
-        window.addEventListener('resize', function () {
-            setExcessPhone(innerWidth >= 750)
+        // window.addEventListener('resize', function () {
+        //     setExcessPhone(innerWidth >= 750)
 
-        })
+        // })
         // 点击其它区域，关闭tabs弹窗
         // const modalEl = document.getElementsByClassName('mask');
         // modalEl[0].addEventListener('click',(e)=>{

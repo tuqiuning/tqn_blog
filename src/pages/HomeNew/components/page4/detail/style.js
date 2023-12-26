@@ -18,8 +18,11 @@ export const Page4DetailWrapper = styled.div`
             font-size:24px;
             font-weight:bold;
         }
+        .participation {
+            margin-top:20px;
+            margin-bottom:20px;
+        }
         .skills {
-            margin-top:10px;
             .skill {
                 // display:inline-block;
                 margin-right:10px;
