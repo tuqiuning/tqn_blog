@@ -82,9 +82,9 @@ export default memo(({ type }) => {
         </div>
         {
           type === 'WECHAT' ? <Image
-            style={{ marginBottom: '20px' }}
-            width={160}
-            height={160}
+            style={{ marginBottom: '1.25rem',width:'10rem',height:'10rem' }}
+            // width={160}
+            // height={160}
             src={qrcode}
             preview={false}
           /> :
@@ -93,9 +93,9 @@ export default memo(({ type }) => {
         }
       </div>
 
-      <div className='copyBtn' style={{ width: '100%', display: 'flex', justifyContent: 'flex-end', gap: '20px', marginTop: '10px' }}>
+      <div className='copyBtn' style={{ width: '100%', display: 'flex', justifyContent: 'flex-end', gap: '1.25rem', marginTop: '0.625rem' }}>
         {
-          <Button type="primary" onClick={() => copyText()}>
+          <Button type="primary" onClick={() => copyText()} style={{height:'2.2rem',fontSize:'1rem',borderRadius:'0.4rem',display:'flex',alignItems:'center',padding:'0.3rem 0.94rem'}}>
             {languageCode[`${type === 'WECHAT' ? 'SAVE' : 'COPY'}`][language]}
           </Button>
         }

@@ -26,10 +26,10 @@ export default memo(() => {
   return (
     <HeaderWrapper $language={language} $logoColor={navColor}>
       <div className='header-left' onClick={goHome}>
-        <ComputerSVG color={navColor}/>
+        <ComputerSVG color={navColor} className='computerIcon' style={{width:'2.5rem'}}/>
         {languageCode.TUQIUNING[language]}
         </div>
-      <div className='header-center'>{dayjs(currentDate).format(`${language === 'zh-CN' ? 'YYYY年MM月DD日' : 'MMM DD,YYYY'}`)}</div>
+      {/* <div className='header-center'>{dayjs(currentDate).format(`${language === 'zh-CN' ? 'YYYY年MM月DD日' : 'MMM DD,YYYY'}`)}</div> */}
       <div className='header-right'>
         <Nav activeNavIndex={parseInt(activeNavIndex)} />
       </div>

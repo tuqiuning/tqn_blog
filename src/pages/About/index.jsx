@@ -7,19 +7,19 @@ export default memo(() => {
   const [items,setItems] = useState([
     {
       type:'PHONE',
-      icon: <PhoneOutlined style={{fontSize:"60px"}}/>,
+      icon: <PhoneOutlined style={{fontSize:"3.75rem"}}/>,
     },
     {
       type:'WECHAT',
-      icon: <WechatOutlined style={{fontSize:"60px"}}/>,
+      icon: <WechatOutlined style={{fontSize:"3.75rem"}}/>,
     },
     {
       type:'EMAIL',
-      icon: <MailOutlined style={{fontSize:"60px"}}/>,
+      icon: <MailOutlined style={{fontSize:"3.75rem"}}/>,
     },
     {
       type:'GITHUB',
-      icon: <GithubOutlined style={{fontSize:"60px"}}/>,
+      icon: <GithubOutlined style={{fontSize:"3.75rem"}}/>,
     }
   ])
   

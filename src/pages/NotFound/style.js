@@ -7,10 +7,10 @@ export const NotFound = styled.div`
     .content {
         box-sizing: border-box;
         height:100%;
-        padding-top:60px;
+        padding-top:3.75rem;
         display:flex;
         justify-content:center;
         align-items:center;
-        font-size:40px;
+        font-size:2.5rem;
     }
 `

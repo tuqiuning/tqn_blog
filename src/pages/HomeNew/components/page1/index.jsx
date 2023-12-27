@@ -24,21 +24,21 @@ export default memo(() => {
         <span>{languageCode.TUQIUNING[language]}</span>
       </div>
       <div className='row'>
-        <BirthSVG style={{paddingTop:'4px',marginRight:'5px'}}/>
+      <BirthSVG style={{paddingTop:'0.25rem',marginRight:'0.31rem',width:'1.56rem',height:'1.56rem'}}/>
         <span className='row-left'>1996.11</span>
-        <AddressSVG style={{paddingTop:'2px',marginRight:'2px'}}/>
+        <AddressSVG style={{paddingTop:'0.125rem',marginRight:'0.125rem',width:'1.56rem',height:'1.56rem'}}/>
         <span >{languageCode.CHONGQING[language]}</span>
       </div>
       <div className='row'>
-        <SchoolSVG style={{paddingTop:'2px',marginRight:'5px'}}/>
+        <SchoolSVG style={{paddingTop:'0.125rem',marginRight:'0.31rem',width:'1.56rem',height:'1.56rem'}}/>
         <span className='row-left'>{languageCode.CHONGQINGGONGCHENG[language]}</span>
-        <EduSVG style={{marginRight:'2px'}}/>
+        <EduSVG style={{marginRight:'0.125rem',width:'1.56rem',height:'1.56rem'}}/>
         <span>{languageCode.BENKE[language]}</span>
       </div>
       <div className='row'>
-        <MailOutlined style={{ fontSize: "20px", marginRight: '5px', paddingTop: '4px' }} />
+        <MailOutlined style={{ fontSize: "1.25rem", marginRight: '0.31rem', paddingTop: '0.25rem' }} />
         <span className='row-left'>tuqiuning@gmail.com</span>
-        <PhoneOutlined style={{ fontSize: "20px" ,marginRight: '5px'}} />
+        <PhoneOutlined style={{ fontSize: "1.25rem" ,marginRight: '0.31rem'}} />
         <span>13101085395</span>
       </div>
 

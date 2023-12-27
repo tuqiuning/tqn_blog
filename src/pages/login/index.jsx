@@ -68,7 +68,7 @@ export default function Login() {
     loginBox[0].style.opacity = 0;
     loginBox[0].style.transition = 'opacity .5s linear';
     const registerBox = document.getElementsByClassName('registerBox');
-    registerBox[0].style.translate = '300px 0';
+    registerBox[0].style.translate = '18.75rem 0';
     registerBox[0].style.transition = 'translate .5s linear';
     // registerBox[0].style.ZIndex = '9';
 
@@ -81,7 +81,7 @@ export default function Login() {
   const goLogin = () =>{
     // clearTimeout(timer);
     const registerBox = document.getElementsByClassName('registerBox');
-    registerBox[0].style.translate = '-300px 0';
+    registerBox[0].style.translate = '-18.75rem 0';
     registerBox[0].style.transition = 'translate .5s linear';
     const loginBox = document.getElementsByClassName('loginBox');
     loginBox[0].style.display = 'flex';

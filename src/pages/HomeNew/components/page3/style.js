@@ -10,32 +10,33 @@ export const Page3Wrapper = styled.div`
     justify-content:center;
     align-items:center;
     color:#fff;
+    font-size:1rem;
     .company {
         color:#fff;
-        margin-bottom:50px;
-        margin-right:30px;
+        margin-bottom:3.125rem;
+        margin-right:1.875rem;
         position:relative;
-        top:-10px;
-        font-size:24px;
+        top:-0.625rem;
+        font-size:1.5rem;
         .duration {
-            font-size:18px;
+            font-size:1.125rem;
             color:#ddd;
         }
     }
     .company1 {
         color:#fff;
-        margin-bottom:50px;
-        margin-right:30px;
+        margin-bottom:3.125rem;
+        margin-right:1.875rem;
         position:relative;
-        top:-10px;
-        font-size:24px;
+        top:-0.625rem;
+        font-size:1.5rem;
         font-family:sans-serif;
     }
     .logoBox {
-        width:56px;
-        height:56px;
+        width:3.5rem;
+        height:3.5rem;
         border-radius:50%;
-        border:5px solid #fff;
+        border:0.3rem solid #fff;
         background-color:#008074;
         cursor:pointer;
     }
@@ -68,10 +69,11 @@ export const Page3Wrapper = styled.div`
      }
     .workContent {
         color:#fff;
-        width:600px;
-        margin-bottom:50px;
-        margin-left:30px;
+        width:37.5rem;
+        margin-bottom:3.125rem;
+        margin-left:1.875rem;
         position:relative;
-        top:-10px;
+        top:-0.625rem;
+        font-size:1rem;
     }
 `

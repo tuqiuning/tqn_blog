@@ -1,23 +1,23 @@
 import styled from 'styled-components';
 
 export const ScaleWrapper = styled.div`
-    padding:20px;
+    padding:1.25rem;
     .main {
         width:100%;
-        height:calc(100% - 60px);
+        height:calc(100% - 3.75rem);
         display:flex;
         flex-direction:column;
         justify-content:center;
         .title {
-            font-size:18px;
-            margin-bottom:20px;
+            font-size:1.125rem;
+            margin-bottom:1.25rem;
         }
         .content {
-            font-size:16px;
-            margin-bottom:20px;
+            font-size:1rem;
+            margin-bottom:1.25rem;
             background:linear-gradient(to right,#000,#000) no-repeat right bottom;
             background-size:0 1px;
-            padding-bottom:5px;
+            padding-bottom:0.3rem;
             transition:background-size 0.5s ease;
             cursor:pointer;
         }
@@ -28,7 +28,7 @@ export const ScaleWrapper = styled.div`
     }
     .copyBtn {
         position:absolute;
-        right:20px;
-        bottom:20px;
+        right:1.25rem;
+        bottom:1.25rem;
     }
   `

@@ -76,7 +76,7 @@ export default memo(({ activeNavIndex }) => {
     // 打开搜索框
     const openSearch = () => {
         setShowSearchBox(true)
-        NavTranslate('-36px')
+        NavTranslate('-2.25rem')
     }
     // 关闭搜索框
     const closeSearch = () => {
@@ -149,14 +149,14 @@ export default memo(({ activeNavIndex }) => {
                 onClose={() => setIsOpen(false)}
                 open={isOpen}
             >
-                <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '20px' }}>
+                <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '1.25rem' }}>
                     <CloseOutlined onClick={() => setIsOpen(false)} />
                 </div>
                 <ul className='tabs-modal' style={{ listStyle: 'none' }}>
                     {tabs.map((item, index) => {
                         return <li
                             key={index}
-                            style={{ marginBottom: '16px', cursor: 'pointer', color: `${activeNavIndex === index ? '#1677ff' : '#000'}` }}
+                            style={{ marginBottom: '1rem', cursor: 'pointer', color: `${activeNavIndex === index ? '#1677ff' : '#000'}` }}
                             onClick={() => { changeTab(item.path, index) }}
                         >
                             {item.name[language]}

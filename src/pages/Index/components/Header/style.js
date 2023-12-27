@@ -6,22 +6,25 @@ export const HeaderWrapper = styled.header`
     z-index:99;
     position:absolute;
     width:100%;
-    top:10px;
+    top:0.625rem;
     display:flex;
     justify-content:space-between;
-    padding:10px 40px 10px 20px;
+    padding:0.625rem 2.5rem 0.625rem 1.25rem;
     background-color:transparent;
     color:${props => props.$logoColor};
     .header-left {
-        flex:1;
+        width:50%;
         font-family: ${props => props.$language === 'zh-CN' ? 'cursive':'douyuFont'};
-        font-size:24px;
+        font-size:1.5rem;
         cursor:pointer;
         display:flex;
         align-items:center;
+        .computerIcon {
+            font-size:2.5rem;
+        }
     }
     .header-right{
-        flex:1;
+        width:50%;
         display:flex;
         justify-content:flex-end;
     }
@@ -29,5 +32,5 @@ export const HeaderWrapper = styled.header`
         flex-grow:1;
         text-align:center;
         cursor:pointer;
-        line-height:36px;
+        line-height:2.25rem;
 }`

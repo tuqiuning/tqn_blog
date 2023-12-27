@@ -12,13 +12,13 @@ background-image:url(${pscmin});
         height:100%;
     }
     .ant-carousel-vertical .slick-dots-right {
-        right:40px;
+        right:2.5rem;
     }
     .ant-carousel-vertical .slick-dots li {
-        margin-top:10px;
+        margin-top:0.625rem;
         button {
-            width:16px !important;
-            height:16px !important;
+            width:1rem !important;
+            height:1rem !important;
             border-radius:50% !important;
         }
     }
@@ -33,17 +33,17 @@ background-image:url(${pscmin});
         }
     }
     .arrowDownBox {
-        width:60px;
-        height:60px;
+        width:3.75rem;
+        height:3.75rem;
         border-radius:50%;
         position:absolute;
         z-index:2;
         display:flex;
         justify-content:center;
         align-items:center;
-        bottom:40px;
+        bottom:3rem;
         left:50%;
-        font-size:30px;
+        font-size:1.875rem;
         transform:translate(-50%);
         color:#fccb71 ;
         border:1px #fccb71  solid;
@@ -56,13 +56,17 @@ background-image:url(${pscmin});
     .footer {
         position:absolute;
         width:100%;
-        bottom:10px;
+        bottom:0.625rem;
         display:flex;
         flex-wrap:wrap;
         justify-content:center;
+        .policeIcon {
+            width:0.94rem;
+            height:0.94rem;
+        }
         a {
-            margin-right:5px;
-            font-size:12px;
+            margin-right:0.3125rem;
+            font-size:0.75rem;
              /* 去除默认的下划线 */
             text-decoration: none;
             outline: none;	/* 去除旧版浏览器的点击后的外虚线框 */

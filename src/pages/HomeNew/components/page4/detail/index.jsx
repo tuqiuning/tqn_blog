@@ -7,7 +7,7 @@ export default memo((props) => {
     <Page4DetailWrapper>
       <div className='left'>
       <Image
-        width={200}
+        width={'12.5rem'}
         src={props.img}
       />
       </div>

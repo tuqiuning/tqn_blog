@@ -51,9 +51,9 @@ export default memo(() => {
   })
   
   const contentStyle = {
-    height: 'calc(100vh - 60px)',
+    height: 'calc(100vh - 3.75rem)',
     color: '#fff',
-    lineHeight: '160px',
+    lineHeight: '13.75rem',
     textAlign: 'center',
     background: '#364d79',
   };
@@ -85,7 +85,7 @@ export default memo(() => {
           </div>
         }
         <div className='footer'>
-        <img src={icon} alt="" width={15} height={15}/>
+        <img src={icon} alt="" className='policeIcon'/>
       <a href="https://beian.mps.gov.cn/#/query/webSearch?code=50011302222072\" rel="noreferrer" target="_blank">渝公网安备50011302222072</a>
       <a href="https://beian.miit.gov.cn/" target="_blank">渝ICP备2023016344号-1</a>
       </div>

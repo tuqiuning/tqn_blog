@@ -13,14 +13,14 @@ export const LoginStyled = styled.div`
   background-position:center;
   background-repeat: no-repeat;
 .centerBox {
-  width:300px;
-    height:360px;
+  width:18.75rem;
+    height:33.75rem;
    overflow:hidden;
     .loginAndRegister {
-      width:600px;
+      width:37.5rem;
       height:100%;
       display:flex;
-      transform:translateX(-300px);
+      transform:translateX(-18.75rem);
     }
 }
 .registerBox {
@@ -29,71 +29,71 @@ export const LoginStyled = styled.div`
   .loginBox,.registerBox {
     position:relative;
     color:#fff;
-    width:300px;
-    height:360px;
+    width:18.75rem;
+    height:33.75rem;
     background-color:rgba(0,0,0,0.3);
     display:flex;
     flex-direction:column;
     align-items:center;
     border-radius:5px;
     .loginTitle {
-      margin-top:30px;
-      font-size:24px;
+      margin-top:1.875rem;
+      font-size:1.5rem;
       font-weight:bold;
     }
     .account {
       width:60%;
-      height:40px;
-      margin-top:20px;
+      height:2.5rem;
+      margin-top:1.25rem;
       border-bottom:1px solid #bbb;
-      line-height:40px;
+      line-height:2.5rem;
       color:gray;
       .accountInput {
         border:none;
         outline:none;
         background-color:transparent;
-        height:40px;
+        height:2.5rem;
         color:#fff;
       }
     }
     .password {
       width:60%;
-      height:40px;
+      height:2.5rem;
       border-bottom:1px solid #bbb;
-      line-height:40px;
+      line-height:2.5rem;
       color:gray;
       .pwdInput {
         border:none;
         outline:none;
         background-color:transparent;
-        height:40px;
+        height:2.5rem;
         color:#fff;
       }
     }
     .btn {
       cursor:pointer;
-      margin-top:40px;
+      margin-top:2.5rem;
       text-align:center;
       width:64%;
-      height:40px;
+      height:2.5rem;
       background-color:rgba(84,84,84,.8);
-      border-radius:20px;
-      line-height:40px;
+      border-radius:1.25rem;
+      line-height:2.5rem;
     }
     .btn1 {
       cursor:pointer;
-      margin-top:80px;
+      margin-top:5rem;
       text-align:center;
       width:64%;
-      height:40px;
+      height:2.5rem;
       background-color:rgba(84,84,84,.8);
-      border-radius:20px;
-      line-height:40px;
+      border-radius:1.25rem;
+      line-height:2.5rem;
     }
     .switchBtn {
       cursor:pointer;
-      margin-top:10px;
-      font-size:14px;
+      margin-top:0.625rem;
+      font-size:0.875rem;
       color:#aaa;
     }
   }

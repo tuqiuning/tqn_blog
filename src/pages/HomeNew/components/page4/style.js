@@ -9,14 +9,14 @@ export const Page4Wrapper = styled.div`
     align-items:center;
     .box {
         width:80%;
-        height:500px;
+        height:51.25rem;
         // background-color:gray;
         display:flex;
         justify-content:center;
         .content {
             position:relative;
             width:80%;
-            margin:0 30px;
+            margin:0 1.875rem;
             overflow:hidden;
             .projectTransition-enter {
                 top:0;
@@ -37,7 +37,7 @@ export const Page4Wrapper = styled.div`
         
         .btnBox {
             height:100%;
-            width:50px;
+            width:3.125rem;
             display:flex;
             justify-content:center;
             align-items:center;

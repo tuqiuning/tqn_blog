@@ -15,18 +15,19 @@ export const Page4DetailWrapper = styled.div`
     .right {
         flex:1;
         .title {
-            font-size:24px;
+            font-size:1.5rem;
             font-weight:bold;
         }
         .participation {
-            margin-top:20px;
-            margin-bottom:20px;
+            margin-top:1.25rem;
+            margin-bottom:1.25rem;
+            font-size:1rem;
         }
         .skills {
             .skill {
                 // display:inline-block;
-                margin-right:10px;
-                font-size:18px;
+                margin-right:0.625rem;
+                font-size:1.125rem;
                 // font-weight:bold;
                 
             }

@@ -18,6 +18,7 @@ export default defineConfig({
   },
   server: {
     open:'/',
+    host:'0.0.0.0',
     proxy: {
       "/api": {
         target: "http://192.168.10.60:8080/coordination",

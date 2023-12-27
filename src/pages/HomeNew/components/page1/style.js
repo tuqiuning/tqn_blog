@@ -14,24 +14,24 @@ export const Page1Wrapper = styled.div`
     justify-content:center;
     .motto {
         border-bottom:1px solid #fff;
-        padding:0 20px 10px 30px;
-        font-size:26px;
+        padding:0 1.25rem 0.625rem 1.875rem;
+        font-size:1.625rem;
         font-weight:bold;
     }
     .row {
         display:flex;
-        margin-top:20px;
-        margin-bottom:20px;
-        font-size:20px;
+        margin-top:1.25rem;
+        margin-bottom:1.25rem;
+        font-size:1.25rem;
         .divide {
-            margin:0 10px;
-            height:21px;
-            margin-top:5px;
-            width:2px;
+            margin:0 0.625rem;
+            height:1.3rem;
+            margin-top:0.3rem;
+            width:0.125rem;
             background-color:#fff;
         }
         .row-left {
-            margin-right:20px;
+            margin-right:1.25rem;
         }
     }
 `
