@@ -16,8 +16,6 @@ export default memo(() => {
 
   return (
     <NotFound>
-      < Header />
-      <div className='content'>404</div>
     </NotFound>
   )
 })
