@@ -6,18 +6,25 @@ export const Page3Wrapper = styled.div`
     color:#fff;
     width:100%;
     height:100vh;
+    padding-right:10rem;
     display:flex;
     justify-content:center;
+    flex-direction:column;
     align-items:center;
     color:#fff;
     font-size:1rem;
+    .title {
+        font-size:1.5rem;
+        font-weight:bold;
+        margin-bottom:5rem;
+    }
     .company {
         color:#fff;
         margin-bottom:3.125rem;
         margin-right:1.875rem;
         position:relative;
         top:-0.625rem;
-        font-size:1.5rem;
+        font-size:1.3rem;
         .duration {
             font-size:1.125rem;
             color:#ddd;
@@ -29,7 +36,7 @@ export const Page3Wrapper = styled.div`
         margin-right:1.875rem;
         position:relative;
         top:-0.625rem;
-        font-size:1.5rem;
+        font-size:1.3rem;
         font-family:sans-serif;
     }
     .logoBox {
@@ -74,6 +81,13 @@ export const Page3Wrapper = styled.div`
         margin-left:1.875rem;
         position:relative;
         top:-0.625rem;
-        font-size:1rem;
+        font-size:0.9rem;
+        .item {
+            margin-bottom:1rem;
+            width:90%;
+            ::before {
+                content:'·',
+            }
+        }
     }
 `

@@ -22,7 +22,7 @@ export default memo(({ activeNavIndex }) => {
         languageCode.HOME,
         languageCode.FORME,
         // languageCode.WORK,
-        languageCode.FRONT,
+        // languageCode.FRONT,
         // languageCode.END,
         // languageCode.LANG,
     ]

@@ -6,15 +6,24 @@ export default memo((props) => {
   return (
     <Page4DetailWrapper>
       <div className='left'>
-      <Image
-        width={'12.5rem'}
-        src={props.img}
-      />
+        {
+          props.img.map(item => {
+            return <Image
+            width={'12.5rem'}
+            height={'12.5rem'}
+            style={{objectFit:'cover'}}
+            src={item}
+          />
+          })
+        }
       </div>
       <div className='right'>
         <div className='title'>
            {props.name}
         </div>
+        <p className='overview'>
+          {props.overview}
+        </p>
         <ul className='participation'>
             {
             props.content && props.content.map(item =>{
@@ -25,7 +34,7 @@ export default memo((props) => {
         <div className='skills'>
           {
             props.skills.map(item =>{
-              return <span key={item} className='skill'>{item}</span>
+              return <span key={item} className='skill' style={{color:'rgb(130 255 177)'}}>{'#'+ item}</span>
             })
           }
         </div>

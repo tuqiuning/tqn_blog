@@ -45,9 +45,23 @@ background-image:url(${pscmin});
         left:50%;
         font-size:1.875rem;
         transform:translate(-50%);
-        color:#fccb71 ;
-        border:1px #fccb71  solid;
+        color:#fccb71;
+        border:2px #fccb71  solid;
         cursor:pointer;
+        svg {
+            animation:arrowDown 0.8s linear infinite;
+        }
+        @keyframes arrowDown {
+            0% {
+                transform:translateY(-0.2rem);
+            }
+            50% {
+                transform:translateY(0.2rem);
+            }
+            100% {
+                transform:translateY(-0.2rem);
+        }
+        }
         &:hover {
             color:#ffa500;
             border:1px #ffa500 solid;

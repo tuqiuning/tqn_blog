@@ -11,7 +11,7 @@ export const Page2Wrapper = styled.div`
     .title {
         font-size:1.5rem;
         font-weight:bold;
-
+        margin-bottom:2.5rem;
     }
     ul {
         font-size:1rem;

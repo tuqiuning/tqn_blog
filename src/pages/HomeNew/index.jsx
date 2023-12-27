@@ -4,6 +4,7 @@ import { Carousel, Radio,message } from 'antd';
 import { ArrowDownOutlined } from '@ant-design/icons';
 import classNames from 'classnames';
 import languageCode from '@/utils/language';
+import ArrowDown from '@/assets/icon/arrowDown';
 import icon from '@/assets/icon/备案图标.png';
 import Page1 from './components/page1';
 import Page2 from './components/page2';
@@ -81,7 +82,7 @@ export default memo(() => {
         </Carousel>
         {
           currentRef.current !== 3 && <div className='arrowDownBox' onClick={nextPanel}>
-          <ArrowDownOutlined />
+          <ArrowDown style={{width:'2.5rem',height:'2.5rem'}}/>
           </div>
         }
         <div className='footer'>

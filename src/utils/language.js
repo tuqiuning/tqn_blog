@@ -11,10 +11,10 @@ const HOME = {
 }
 const FORME = {
     name:{
-        "zh-CN": '关于我',
-        "en-US": 'About me'
+        "zh-CN": '联系我',
+        "en-US": 'Contact'
     },
-    path:'/about'
+    path:'/contact'
     
 }
 const WORK = {

@@ -20,7 +20,7 @@ const router = [
                 auth:false
             },
             {
-                path:'about',
+                path:'contact',
                 element:<About />,
                 auth:false
             },
