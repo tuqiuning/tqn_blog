@@ -32,7 +32,7 @@ export default memo(() => {
       <div className='row'>
         <SchoolSVG style={{paddingTop:'0.125rem',marginRight:'0.31rem',width:'1.56rem',height:'1.56rem'}}/>
         <span className='row-left'>{overviewData[language].school}</span>
-        <EduSVG style={{marginRight:'0.125rem',width:'1.56rem',height:'1.56rem'}}/>
+        <EduSVG style={{paddingTop:'0.125rem',marginRight:'0.125rem',width:'1.56rem',height:'1.56rem'}}/>
         <span>{overviewData[language].educational}</span>
       </div>
       <div className='row'>

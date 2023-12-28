@@ -9,11 +9,6 @@ export const Page4Wrapper = styled.div`
     justify-content:center;
     overflow:hidden;
     align-items:center;
-    > .title {
-        font-size:1.5rem;
-        font-weight:bold;
-        margin-bottom:5rem;
-    }
     .box {
         width:90%;
         height:90%;

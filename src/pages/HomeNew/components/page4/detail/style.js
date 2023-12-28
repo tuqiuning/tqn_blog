@@ -10,7 +10,7 @@ export const Page4DetailWrapper = styled.div`
     left:0;
     }
     .left {
-        width:30%;
+        width:25%;
     }
     .right {
         flex:1;
