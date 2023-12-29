@@ -15,14 +15,14 @@ export const companyData = {
           link:'http://www.sunutech.net/'
         },
         {
-          title:'武汉智星纳川科技有限公司',
+          title:'重庆托良峰科技发展有限公司',
           duration:'2020/08 - 2022/09',
           dutys:[
             '根据需求实现页面交互效果，配合后端完成PC端及小程序的业务开发',
             '优化网站性能，提高用户体验，包括加载速度、响应时间和页面布局等方面的优化',
             '参与项目的需求分析和功能设计，提供前端技术方案和建议'
           ],
-          link:'https://www.whzxnc.com/index.html'
+          link:'https://cn.bing.com/search?q=重庆托良峰科技发展有限公司'
         }
       ],
     "en-US":[
