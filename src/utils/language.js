@@ -9,13 +9,19 @@ const HOME = {
     },
     path:'/home'
 }
-const FORME = {
+const ABOUT = {
     name:{
         "zh-CN": '联系我',
-        "en-US": 'Contact'
+        "en-US": 'About'
+    },
+    path:'/about'
+}
+const CONTACT = {
+    name:{
+        "zh-CN": '留言',
+        "en-US": 'message'
     },
     path:'/contact'
-    
 }
 const WORK = {
     name:{
@@ -114,7 +120,8 @@ const SENDEMAIL = {
 export default {
     TUQIUNING,
     HOME,
-    FORME,
+    CONTACT,
+    ABOUT,
     WORK,
     FRONT,
     END,

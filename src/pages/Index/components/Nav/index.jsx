@@ -20,7 +20,8 @@ export default memo(({ activeNavIndex }) => {
     store.getState().system.language;
     const tabs = [
         languageCode.HOME,
-        languageCode.FORME,
+        languageCode.ABOUT,
+        languageCode.CONTACT,
         // languageCode.WORK,
         // languageCode.FRONT,
         // languageCode.END,
