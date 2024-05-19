@@ -1,5 +1,7 @@
 import xietong from '@/assets/img/协同+cover.png';
 import xietong_mobile from '@/assets/img/协同+mobile.png';
+import penmamaImg1 from '@/assets/img/penmamaImg1.png';
+import penmamaImg2 from '@/assets/img/penmamaImg2.png';
 import health_mobile from '@/assets/img/之见健康mobile.png';
 import health_pc from '@/assets/img/health_pc.jpg';
 import pit_img from '@/assets/img/基坑cover.png';
@@ -11,11 +13,25 @@ export const title = {
 export const projectList = {
     "zh-CN": [
         {
-            name: '中信集团协同+二期',
+            name: '盆妈妈',
+            img: [penmamaImg1,penmamaImg2],
+            overview: '本项目是提供女性健康全品类服务和产品的平台，聚集了女性用户、到家健康师、女性健康门店，将线下的消费场景与线上的平台有机结合。平台共有三个端，分别为用户端、商家端和管理端。',
+            skills: ['uniapp','uView','Element-UI'],
+            content: [
+                '用户端购买项目、商品全流程，包括领取优惠券、收藏、加入购物车、拼团、下单、服务预约、商品物流查询、到店项目核销、评价。',
+                '用户端热门活动的开发，包括抽奖、签到、秒杀、许愿墙、砸金蛋等。',
+                '用户端分享功能开发，分享项目、商品、门店给好友，赚取佣金。',
+                '商家端健康师、门店入驻流程，包括填写资料、签署协议、缴费，选择服务时间和服务区域。',
+                '商家端健康师、门店添加项目、优惠券、秒杀项目。',
+                '负责项目的微信小程序、抖音小程序的提审、发布，H5的打包、部署。'
+            ]
+        },
+        {
+            name: '中信集团协同+',
             img: [xietong,xietong_mobile],
             overview: '本项目是中信集团用于集团内部开展协同业务及协同管理工作的平台。支持子公司、区域分会提升协同质效，加强内部合作，服务外部客户。该项目 包含企业微信端和网页端，主要模块有：客户拜访、协同需求、协同活动、分会管理等。',
             skills: ['React','Ant Design','Taro','NutUI','WebSocket'],
-            content: [,
+            content: [
                 '开发及维护系统核心模块-客户拜访，完成发起人、参与人、审批人在各种审批状态下的页面展示、逻辑处理。',
                 '完成消息、待办功能，使用WebSocket实时获取数据，点击消息跳转到相应模块页面。',
                 '完成用户使用时长的埋点，利用Vuex和localStorage保存菜单名和后端返回的页面id。',
@@ -51,22 +67,24 @@ export const projectList = {
                 '制作消息模板，需要创建消息时可以选择相应的模板，快速创建消息。 '
             ]
         },
-        {
-            name: '书书友',
-            img: [book_img],
-            overview: '本项目是一个为书友提供闲置书籍交易的微信小程序服务平台，用户可发布书籍和购买书籍，主要模块有：书籍分类、书籍详情、订单管理、评价管理、书友论坛。 ',
-            skills: ['uniapp','uView'],
-            content: [
-                '完成书籍分类页面，书籍图片上同时添加点击事件click和长按事件longpress，点击进入详情页面，长按可选择加入购物车或加入收藏。',
-                '完成书籍详情页面，详情页面展示书籍图片、豆瓣评分、简介、是否可借、分享书籍等信息，书籍图片以轮播图的方式展示。',
-                '完成猜你喜欢页面，后端根据用户的收藏、借阅、选择的喜好智能推荐出用户可能感兴趣的书籍，用户可滑动查看下一本书籍，点击进入详情页面。',
-                '完成评价管理页面，查看我的评价，可删除以及继续评价。'
-            ]
-        },
     ],
     'en-US': [
         {
-            name: 'Citic Group Synergy + Phase II',
+            name: 'PENMAMA',
+            img: [penmamaImg1,penmamaImg2],
+            overview: "This project is a platform to provide a full range of women's health services and products, gathering female users, home health professionals, women's health stores, and organically combining offline consumption scenes with online platforms. The platform has three terminals, namely the client side, the merchant side and the management side.",
+            skills: ['uniapp','uView','Element-UI'],
+            content: [
+                'The whole process of purchasing items and goods at the client end, including receiving coupons, collecting, adding to shopping cart, grouping, placing orders, service reservation, commodity logistics inquiry, in-store project write-off and evaluation.',
+                'Development of popular activities on the client side, including sweepstakes, sign-in, instant kill, wishing wall, smashing golden eggs, etc.',
+                'Client share function development, share projects, goods, stores to friends, earn commission.',
+                "Complete the development of notification and announcement. According to the department, the corresponding form items, sending scope and approver are displayed, and the announcement content is displayed on the recipient's account at the arrival time.",
+                'Merchant side health professionals, store entry process, including filling in information, signing agreements, payment, selection of service hours and service areas.',
+                "Responsible for the interrogation and release of the project's wechat mini program and Tiktok mini program, and the packaging and deployment of H5."
+            ]
+        },
+        {
+            name: 'Citic Group Synergy +',
             img: [xietong,xietong_mobile],
             overview: 'This project is a platform for CITIC Group to carry out collaborative business and collaborative management work within the group. Strengthen internal cooperation and serve external customers. The project includes enterprise wechat terminal and web terminal, and the main modules are: customer visit, collaborative needs, collaborative activities, etc.',
             skills: ['React','Ant Design','Taro','NutUI','WebSocket'],
@@ -104,18 +122,6 @@ export const projectList = {
                 'Complete CRUD and process development of member levels with Avue, which is used by administrators to set the corresponding rights and interests for each member level.',
                 'Use Avue to complete the CRUD and process development of coupons for administrators to set the amount and claim conditions for coupons.',
                 'Create a message template. If you need to create a message, you can select a template to quickly create a message.'
-            ]
-        },
-        {
-            name: 'Book Friend',
-            img: [book_img],
-            overview: 'This project is a WeChat mini program service platform for book lovers to trade idle books, users can publish books and buy books, the main modules are: book classification, book details, order management, evaluation management, book forum. ',
-            skills: ['uniapp','uView'],
-            content: [
-                'Finish the book classification page, add the click event and longpress event longpress on the book picture at the same time, click to enter the details page, longpress to choose to add to the shopping cart or add to the collection.',
-                'Complete the book details page, the details page shows the book pictures, Douban rating, introduction, whether you can borrow, share books and other information, the book pictures are displayed in the way of rotation map.',
-                "Complete the guess you like page, the back-end according to the user's collection, borrowing, selection of preferences intelligent recommend the user may be interested in the book, the user can slide to see the next book, click to enter the details page.",
-                'Complete the Review management page, view my review, delete and continue the review.'
             ]
         },
     ]

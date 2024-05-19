@@ -3,6 +3,7 @@ import Header from '@/pages/Index/components/Header';
 import { Contact } from './style';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
+import axios from 'axios';
 
 // import { NotFound } from './style';
 
@@ -23,7 +24,7 @@ import { useSelector } from 'react-redux';
 // })
 
 // import React from 'react';
-import { Button, Form, Input, Select, Space,notification  } from 'antd';
+import { Button, Form, Input, Select, Space, notification } from 'antd';
 const { Option } = Select;
 const { TextArea } = Input;
 const layout = {
@@ -67,57 +68,58 @@ export default memo(() => {
   };
   return (
     <Contact>
-<Form
-      // {...layout}
-      form={form}
-      name="control-hooks"
-      onFinish={onFinish}
-      style={{
-        maxWidth: '100%',
-      }}
-    >
-      <Form.Item
-        name="name"
-        label={language === 'en-US' ? 'Your Name':'你的名字'}
-        rules={[
-          {
-            required: false,
-          },
-        ]}
+      <Form
+        // {...layout}
+        layout="vertical"
+        form={form}
+        name="control-hooks"
+        onFinish={onFinish}
+        style={{
+          maxWidth: '100%',
+        }}
       >
-        <Input placeholder={language === 'en-US' ? 'Please enter your name':'请输入你的名字'}/>
-      </Form.Item>
-      <Form.Item
-        name="gender"
-        label={language === 'en-US' ? 'Your Email':'你的邮箱'}
-        rules={[
-          {
-            required: false,
-          },
-        ]}
-      >
-        <Input placeholder={language === 'en-US' ? 'Please enter your email':'请输入你的邮箱'}/>
-      </Form.Item>
-      <Form.Item
-        name="gender"
-        label={language === 'en-US' ? 'Your Message':'你的留言'}
-        rules={[
-          {
-            required: false,
-          },
-        ]}
-      >
-       <TextArea placeholder={language === 'en-US' ? 'Please enter your message':'请输入你的留言'}/>
-      </Form.Item>
-      <Form.Item {...tailLayout}>
-        <Space>
-          <Button type="default" htmlType="submit">
-            {language === 'en-US' ? 'Submit':'提交' }
-          </Button>
-        </Space>
-      </Form.Item>
-    </Form>
+        <Form.Item
+          name="name"
+          label={language === 'en-US' ? 'Your Name' : '你的名字'}
+          rules={[
+            {
+              required: false,
+            },
+          ]}
+        >
+          <Input placeholder={language === 'en-US' ? 'Please enter your name' : '请输入你的名字'} />
+        </Form.Item>
+        <Form.Item
+          name="phone"
+          label={language === 'en-US' ? 'Your Email Or Phone' : '你的邮箱或电话'}
+          rules={[
+            {
+              required: false,
+            },
+          ]}
+        >
+          <Input placeholder={language === 'en-US' ? 'Please enter your email or phone' : '请输入你的邮箱或电话'} />
+        </Form.Item>
+        <Form.Item
+          name="message"
+          label={language === 'en-US' ? 'Your Message' : '你的留言'}
+          rules={[
+            {
+              required: false,
+            },
+          ]}
+        >
+          <TextArea placeholder={language === 'en-US' ? 'Please enter your message' : '请输入你的留言'} />
+        </Form.Item>
+        <Form.Item {...tailLayout}>
+          <Space>
+            <Button type="default" htmlType="submit">
+              {language === 'en-US' ? 'Submit' : '提交'}
+            </Button>
+          </Space>
+        </Form.Item>
+      </Form>
     </Contact>
-    
+
   );
 });

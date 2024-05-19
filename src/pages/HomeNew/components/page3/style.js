@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import shangyouLogo from '@/assets/icon/shangyou.png';
-import tuoliangfeng from '@/assets/icon/托良峰.png'
+import sunloadingLogo from '@/assets/icon/sunloadingLogo.png'
 import zhixing from '@/assets/icon/yaobangbang.png';
 
 export const Page3Wrapper = styled.div`
@@ -58,10 +58,10 @@ export const Page3Wrapper = styled.div`
         
     }
     .logo1 {
-        background-image:url(${shangyouLogo});
+        background-image:url(${sunloadingLogo});
     }
     .logo2 {
-        background-image:url(${tuoliangfeng});
+        background-image:url(${shangyouLogo});
         animation-delay:.5s;
     }
     @keyframes logo {
