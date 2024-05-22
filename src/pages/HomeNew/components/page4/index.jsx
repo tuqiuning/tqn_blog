@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import ArrowRightSVG from '@/assets/icon/arrowRightSVG';
 import ArrowLeftSVG from '@/assets/icon/arrowLeftSVG';
 import xietong from '@/assets/img/协同+cover.png';
-import { title,projectList } from './data';
+import { title, projectList } from './data';
 import { Page4Wrapper } from './style';
 
 export default memo(() => {
@@ -34,19 +34,19 @@ export default memo(() => {
           }
         </div>
         <div className='content'>
-          
-      <div className='title'>{title[language]}</div>
+
+          <div className='title'>{title[language]}</div>
           {
             projectList[language].map((item, index) => {
               return (
-                <>
+                <React.Fragment key={index}>
                   {
                     <CSSTransition in={showIndex === index} unmountOnExit={true} classNames='projectTransition' timeout={500}>
                       <Detail {...item}></Detail>
                     </CSSTransition>
 
                   }
-                </>
+                </React.Fragment>
               )
             })
           }

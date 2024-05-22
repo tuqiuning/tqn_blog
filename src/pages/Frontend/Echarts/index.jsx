@@ -52,7 +52,6 @@ export default memo(() => {
       }
       maChart.setOption(option);
       maChart.on("click",function(params){
-        console.log(params)
         setRegionName(params.name)
       })
     },[])

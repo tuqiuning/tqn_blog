@@ -11,8 +11,6 @@ const AuthRoute = memo((props) => {
     
     const isExist = mathchs?.some((item) => item.pathname == location.pathname);
     useEffect(() => {
-        console.log('%O', props.children);
-        console.log(location.hash);
         if (['', '#/'].includes(location.hash)) {
             navigate('/home');
             sessionStorage.setItem('activeNavIndex',0);

@@ -52,7 +52,6 @@ export default memo(({ activeNavIndex }) => {
     }
     // 切换tab
     const changeTab = (path, index) => {
-        console.log(index,typeof index);
         if(index === 0) {
             dispatch(changeNavColor('#ffffff'))
             sessionStorage.setItem('navColor','#ffffff');
@@ -66,7 +65,6 @@ export default memo(({ activeNavIndex }) => {
         dispatch(changeActiveNavIndex(index))
     }
     const goSearch = () => {
-        console.log(searchValue);
         if (searchValue === '') {
             return
         }

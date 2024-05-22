@@ -3,7 +3,6 @@ import { Route, Link, HashRouter, Routes, Navigate } from "react-router-dom";
 import AuthRoute from "./router/AuthRoute.jsx";
 import "./App.css";
 import router from '@/router/index';
-console.log(router);
 export default (props) => {
   const routeFun = (router) => {
     return router.map((item, index) => {

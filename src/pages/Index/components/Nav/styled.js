@@ -1,6 +1,6 @@
 import styled from "styled-components";
 export const Container =  styled.div`
-    color:${props => {console.log(props.$navTextColor);
+    color:${props => {props.$navTextColor;
       return  props.$navTextColor}};
     position: relative;
     display:flex;

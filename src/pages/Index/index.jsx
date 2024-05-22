@@ -10,7 +10,6 @@ export default memo(() => {
     if(!sessionStorage.getItem('activeNavIndex')){
       navigate('/home')
     }
-    console.log(sessionStorage.getItem('activeNavIndex'));
   },[])
   return (
     <IndexContainer>

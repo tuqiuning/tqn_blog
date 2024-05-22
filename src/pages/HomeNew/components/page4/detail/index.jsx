@@ -7,12 +7,13 @@ export default memo((props) => {
     <Page4DetailWrapper>
       <div className='left'>
         {
-          props.img.map(item => {
+          props.img.map((item,index) => {
             return <Image
             width={'12.5rem'}
             height={'12.5rem'}
             style={{objectFit:'cover'}}
             src={item}
+            key={index}
           />
           })
         }

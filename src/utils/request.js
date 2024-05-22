@@ -11,7 +11,6 @@ const instance = axios.create({
 instance.interceptors.request.use(function (config) {
     config.headers.token = StorageUtils.getToken();
     // 在发送请求之前做些什么
-    console.log(config)
     return config;
 }, function (error) {
     // 对请求错误做些什么
